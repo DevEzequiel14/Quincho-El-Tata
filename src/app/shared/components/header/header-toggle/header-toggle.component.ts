@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header-toggle',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderToggleComponent {
 
+  @Output() clickEvent = new EventEmitter<void>();
+
+  onClick(){
+    this.clickEvent.emit();
+  }
 }
