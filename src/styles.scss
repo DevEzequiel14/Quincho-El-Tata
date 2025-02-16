@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+$color-primary: #31511e;
+$color-hover: #859f3d;
+$color-bg-black: #1a1a19;
+$color-bg-white: #f6fcdf;
+
+$text-color-primary: #fff;
+$text-color-secondary: #000;
+
+body {
+  display: block;
+  margin: 0;
+  background: $color-bg-black;
+}
