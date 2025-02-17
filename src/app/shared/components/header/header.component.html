@@ -1,7 +1,8 @@
-<header class="header">
-    <div class="container">
-        <app-header-logo></app-header-logo>
-        <app-header-menu [isMenuOpen]="isMenuOpen"></app-header-menu>
-        <app-header-toggle (click)="toggleMenu()"></app-header-toggle>
-    </div>
+<header class="header" appScrollChange scrollClass="scrolled"
+        [scrollThreshold]=50>
+  <div class="container">
+    <app-header-logo></app-header-logo>
+    <app-header-menu [isMenuOpen]="isMenuOpen"></app-header-menu>
+    <app-header-toggle *ngIf="isMobile" (click)="toggleMenu()"></app-header-toggle>
+  </div>
 </header>

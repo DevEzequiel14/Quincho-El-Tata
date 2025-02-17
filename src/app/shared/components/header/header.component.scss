@@ -1,11 +1,17 @@
+ @use "../../../../styles";
+
 .header {
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0);
   padding: 15px 0;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
+
+  &.scrolled {
+    background-color: styles.$color-bg-white;
+    color: styles.$text-color-secondary;
+  }
 
   .container{
     max-width: 1200px;
@@ -13,5 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ScrollChangeDirective } from '../../../directives/scroll-change.directive';
 
 @Component({
   selector: 'app-header-toggle',
-  imports: [],
+  imports: [ScrollChangeDirective],
   templateUrl: './header-toggle.component.html',
   styleUrl: './header-toggle.component.scss'
 })

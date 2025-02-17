@@ -1,4 +1,5 @@
-<nav class="navbar" [class.open]="isMenuOpen">
+<nav class="navbar" [class.open]="isMenuOpen" appScrollChange
+     scrollClass="scrolled" [scrollThreshold]=50>
   <ul>
     <li><a href="#about">Sobre Nosotros</a></li>
     <li><a href="#gallery">Galería</a></li>

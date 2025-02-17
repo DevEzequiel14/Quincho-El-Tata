@@ -1,3 +1,7 @@
+@use "../../../../../styles";
+
 .logo img {
     height: 50px;
+    border-radius: 4px;
+    box-shadow: -3px 3px 10px styles.$color-hover;
 }

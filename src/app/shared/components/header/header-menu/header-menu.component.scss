@@ -1,3 +1,5 @@
+@use "../../../../../styles";
+
 .navbar {
   ul {
     list-style: none;
@@ -9,12 +11,26 @@
     li {
       a {
         text-decoration: none;
-        color: #333;
+        color: styles.$text-color-primary;
         font-weight: bold;
         transition: color 0.3s;
 
         &:hover {
-          color: #ff6600;
+          color: styles.$color-hover;
+        }
+      }
+    }
+  }
+
+  &.scrolled {
+    ul {
+      li {
+        a {
+          color: styles.$text-color-secondary;
+
+          &:hover {
+            color: styles.$color-hover;
+          }
         }
       }
     }
@@ -22,9 +38,9 @@
 
   @media (max-width: 768px) {
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
-    background: white;
+    background: styles.$color-bg-black;
     width: 100%;
     text-align: center;
     display: none;
@@ -37,6 +53,10 @@
 
     &.open {
       display: block;
+    }
+
+    &.scrolled {
+      background: styles.$color-bg-white;
     }
   }
 }
