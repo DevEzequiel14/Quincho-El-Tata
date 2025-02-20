@@ -1,8 +1,8 @@
-<nav class="navbar" [class.open]="isMenuOpen" appScrollChange
-     scrollClass="scrolled" [scrollThreshold]=50>
+<nav class="navbar" [class.open]="isMenuOpen" appScrollChange scrollClass="scrolled" [scrollThreshold]=50>
   <ul>
-    <li><a href="#about">Sobre Nosotros</a></li>
-    <li><a href="#gallery">Galería</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#about" (click)="toggleMenu()">Nosotros</a></li>
+    <li><a href="#benefits" (click)="toggleMenu()">Servicios</a></li>
+    <li><a href="#contact" (click)="toggleMenu()">Contacto</a></li>
+    <li><a href="#location" (click)="toggleMenu()">Ubicación</a></li>
   </ul>
 </nav>

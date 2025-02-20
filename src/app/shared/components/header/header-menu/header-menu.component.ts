@@ -9,4 +9,8 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
 })
 export class HeaderMenuComponent {
   @Input() isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
