@@ -8,11 +8,4 @@ import { Component } from '@angular/core';
 })
 export class GoogleMapComponent {
 
-  locationUrl: string = "https://maps.app.goo.gl/FHNPYCBB4FX87PkUA";
-
-  copyLocation() {
-    navigator.clipboard.writeText(this.locationUrl).then(() => {
-      alert('Ubicación copiada al portapapeles 📍');
-    });
-  }
 }
