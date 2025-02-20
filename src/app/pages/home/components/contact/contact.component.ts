@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SocialComponent } from '../social/social.component';
+import { SocialComponent } from '../../../../shared/components/social/social.component';
 
 @Component({
   selector: 'app-contact',
