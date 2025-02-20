@@ -1,0 +1,15 @@
+@use '../../../../../styles.scss';
+
+.social a {
+  text-align: center;
+  height: 3rem;
+  width: 3rem;
+  background: styles.$color-bg-black;
+  border-radius: 100%;
+  line-height: 3rem;
+  color: styles.$color-primary;
+
+}
+.social a:hover {
+  color: styles.$color-hover;
+}
