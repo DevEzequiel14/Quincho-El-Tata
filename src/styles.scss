@@ -2,8 +2,8 @@
 
 $color-primary: #198754;
 $color-hover: #157347;
-$color-bg-black: #1a1a19;
-$color-bg-white: #f6fcdf;
+$color-bg-black: #000;
+$color-bg-white: #fff;
 
 $text-color-primary: #fff;
 $text-color-secondary: #000;
@@ -11,4 +11,5 @@ $text-color-secondary: #000;
 body {
   display: block;
   margin: 0;
+  font-family:'Times New Roman', Times, serif !important;
 }
