@@ -1,7 +1,12 @@
 @use "../../../../../styles";
 
 .logo img {
-    height: 50px;
-    border-radius: 4px;
-    box-shadow: -3px 3px 10px styles.$color-hover;
+  height: 50px;
+  border-radius: 4px;
+  box-shadow: -3px 3px 10px styles.$color-primary;
+}
+
+.logo img:hover {
+  box-shadow: 0 0 10px 5px styles.$color-hover;
+  cursor: pointer;
 }
