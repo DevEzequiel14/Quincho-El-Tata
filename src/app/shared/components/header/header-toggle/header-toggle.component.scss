@@ -1,18 +1,15 @@
 @use "../../../../../styles";
 
 .menu-button {
-  background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
   display: none;
   color: styles.$text-color-primary;
+  background: styles.$color-primary;
+  border-radius: 4px;
 
   @media (max-width: 768px) {
     display: block;
-
-    &.scrolled {
-      color: styles.$text-color-secondary;
-    }
   }
 }
