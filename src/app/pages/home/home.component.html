@@ -1,16 +1,39 @@
 <app-header></app-header>
-<div class="masthead">
-  <div class="container">
-    <div class="content">
-      <div class="text">
-        <h1 class="title">Quincho El Tata</h1>
-        <h2 class="subtitle">Un lugar para disfrutar</h2>
-        <app-link [text]="buttonText" [href]="ref"></app-link>
+
+<header class="masthead" id="home">
+  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+    <div class="d-flex justify-content-center">
+      <div class="text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Quincho El Tata</h1>
+        <h2 class="text-light mx-auto mt-2 mb-5">Un lugar para disfrutar</h2>
+        <a class="btn btn-success" href="#about">Mas información</a>
       </div>
     </div>
   </div>
-</div>
+</header>
 
-<section class="google-map-section">
-  <app-google-map></app-google-map>
+<section class="about-section text-center" id="about">
+  <!-- About -->
+  <app-about></app-about>
+  <!--  -->
 </section>
+
+<section class="projects-section bg-light" id="benefits">
+  <!-- Benefits -->
+  <app-benefits></app-benefits>
+  <!--  -->
+</section>
+
+<section class="contact-section bg-black" id="contact">
+  <!-- Contact -->
+  <app-contact></app-contact>
+  <!--  -->
+</section>
+
+<section class="text-center bg-black location-section" id="location">
+  <app-location></app-location>
+</section>
+
+<!-- footer -->
+<app-footer></app-footer>
+<!--  -->

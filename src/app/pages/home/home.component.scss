@@ -6,7 +6,7 @@
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),
     url("../../../../public/icons/img-1.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@
   background-size: cover;
 }
 
-.masthead .title {
+.masthead h1 {
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
@@ -24,52 +24,14 @@
   background-clip: text;
 }
 
-.masthead .subtitle {
+.masthead h2 {
   max-width: 20rem;
   font-size: 1rem;
 }
 
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding-right: calc(var(1.5rem) * 0.5);
-  padding-left: calc(var(1.5rem) * 0.5);
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-
 @media (min-width: 768px) {
   .masthead {
-    .title {
+    h1 {
       font-size: 4rem;
       line-height: 4rem;
     }
@@ -81,47 +43,40 @@
     height: 100vh;
     padding: 0;
 
-    .title {
+    h1 {
       font-size: 6.5rem;
       line-height: 6.5rem;
       letter-spacing: 0.8rem;
     }
-    .subtitle {
+    h2 {
       max-width: 30rem;
       font-size: 1.25rem;
     }
   }
 }
 
-.content {
-  display: flex;
-  justify-content: center;
+.about-section {
+  padding-top: 8rem;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.text {
-  text-align: center;
+.projects-section {
+  padding: 8rem 0;
 }
 
-.title {
+.contact-section {
+  padding: 8rem 0;
+}
+
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  font-size: 80%;
   text-transform: uppercase;
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: linear-gradient(styles.$text-color-primary, styles.$text-color-secondary);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 0;
-  margin-bottom: 0;
+  letter-spacing: 0.15rem;
+  border: 0;
 }
 
-.subtitle {
-  margin-bottom: 3rem;
-  margin-top: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  color: styles.$text-color-primary;
-}
-
-.google-map-section {
-  padding: 10rem 0;
+.location-section {
+  padding: 4rem 0;
 }
