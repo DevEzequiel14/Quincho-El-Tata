@@ -16,8 +16,8 @@
 ## 📂 Instalación y Uso  
 1. Clonar el repositorio:  
    ```sh   
-   git clone https://github.com/tuusuario/quincho-el-tata.git
-   cd quincho-el-tata
+   git clone https://github.com/tuusuario/quincho.git
+   cd quincho
 
 2. Instalar dependencias
    npm install
