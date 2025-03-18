@@ -1,0 +1,10 @@
+.img-responsive {
+  max-width: 80%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .img-responsive {
+    max-width: 100%;
+  }
+}
