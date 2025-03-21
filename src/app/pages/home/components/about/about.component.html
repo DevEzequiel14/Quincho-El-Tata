@@ -1,37 +1,28 @@
 <section class="py-5 position-relative text-white">
-  <div class="overlay position-absolute top-0 start-0 w-100 h-100 "></div>
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
   <div class="container position-relative">
     <div class="row align-items-center">
       <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-        <h2 class="mb-4 fw-bold">Quincho con Pileta</h2>
-        <p class="lead">
-          Disfruta de un espacio exclusivo para eventos, con todas las comodidades y una hermosa pileta.
-          Nuestro salón está totalmente habilitado para celebraciones de todo tipo, ofreciendo una experiencia única en
-          un entorno acogedor.
-        </p>
+        <h2 class="mb-4 fw-bold">{{ title }}</h2>
+        <p class="lead">{{ description }}</p>
         <div class="mb-4">
           <h3 class="h5 fw-semibold">Detalles del espacio</h3>
           <ul class="list-unstyled">
+            @for (detail of details; track $index) {
             <li class="d-flex align-items-center">
-              <i class="bi bi-people-fill me-2"></i> <span>Capacidad para <strong>60 personas</strong>.</span>
+              <i class="bi {{ detail.icon }} me-2"></i>
+              <span [innerHTML]="detail.texto"></span>
             </li>
-            <li class="d-flex align-items-center">
-              <i class="bi bi-brightness-high-fill me-2"></i> <span><strong>Eventos de día: </strong>11:00 a 20:00
-                hs.</span>
-            </li>
-            <li class="d-flex align-items-center">
-              <i class="bi bi-moon-fill me-2"></i><span><strong>Eventos de noche: </strong>20:00 a 05:00 hs.</span>
-            </li>
+            }
           </ul>
-          <p class="fst-italic text-light small">Los precios varían según el tipo de evento y el mes en curso.</p>
+          <p class="fst-italic text-light small">{{ note }}</p>
         </div>
-
-        <a href="https://wa.me/+5493885054451?text=Hola, quisiera información sobre el alquiler del quincho. ¡Gracias!"
-          target="_blank" class="btn btn-success btn-lg fw-semibold">Consultar disponibilidad</a>
+        <a [href]="urlWhatsApp" target="_blank" class="btn btn-success btn-lg fw-semibold">
+          {{ btnText }}
+        </a>
       </div>
-
       <div class="col-lg-6 text-center">
-        <img src="icons/about.webp" class="img-fluid rounded shadow-lg img-responsive" alt="Quincho con pileta">
+        <img [src]="imgSrc" class="img-fluid rounded shadow-lg img-responsive" [alt]="imgAlt">
       </div>
     </div>
   </div>
