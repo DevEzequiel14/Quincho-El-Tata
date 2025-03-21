@@ -1,30 +1,32 @@
-<app-header></app-header>
-
-<header class="masthead" id="home">
-  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex justify-content-center">
-      <div class="text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Quincho El Tata</h1>
-        <h2 class="text-light mx-auto mt-2 mb-5">Un lugar para disfrutar</h2>
-        <a class="btn btn-success btn-lg fw-semibold" href="#about">Mas información</a>
+<section class="header-animation">
+  <app-header></app-header>
+  <header class="masthead" id="home">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+      <div class="d-flex justify-content-center">
+        <div class="text-center">
+          <h1 class="mx-auto my-0 text-uppercase">Quincho El Tata</h1>
+          <h2 class="text-light mx-auto mt-2 mb-5">Un lugar para disfrutar</h2>
+          <a class="btn btn-success btn-lg fw-semibold" href="#about">Mas información</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+  <app-whatsapp></app-whatsapp>
+</section>
 
-<section class="about-section bg-dark" id="about">
+<section class="about-section bg-dark" id="about" appScrollAnimate>
   <app-about></app-about>
 </section>
 
-<section class="projects-section bg-light" id="benefits">
+<section class="projects-section bg-light" id="benefits" appScrollAnimate>
   <app-benefits></app-benefits>
 </section>
 
-<section class="contact-section bg-dark" id="contact">
+<section class="contact-section bg-dark" id="contact" appScrollAnimate>
   <app-contact></app-contact>
 </section>
 
-<section class="text-center bg-dark location-section" id="location">
+<section class="text-center bg-dark location-section" id="location" appScrollAnimate>
   <app-location></app-location>
 </section>
 
