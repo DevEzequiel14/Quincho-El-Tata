@@ -4,32 +4,17 @@
         src="icons/benefits.webp" alt="..." /></div>
     <div class="col-xl-4 col-lg-5">
       <div class="featured-text text-lg-start">
-        <h4 class="fw-bold">Servicio principal</h4>
-        <p class="mb-0 lead">Quincho con pileta y espacio verde para poder disfrutar un lindo día junto a tus
-          seres queridos.</p>
+        <h4 class="fw-bold">{{mainTitle}}</h4>
+        <p class="mb-0 lead">{{mainDescription}}</p>
         <div class="mt-4">
           <ul class="list-unstyled">
+            @for (item of main; track $index) {
             <li class="d-flex align-items-start">
-              <span class="me-2">🔹</span> Asadores techados, cocina con horno, heladera, freezer y vajilla de vidrio.
+              <span class="me-2">🔹</span> {{item}}
             </li>
-            <li class="d-flex align-items-start">
-              <span class="me-2">🔹</span> Pileta de 8x4m + pileta pequeña de 2x2m.
-            </li>
-            <li class="d-flex align-items-center">
-              <span class="me-2">🔹</span> Mesas, sillas, bancas
-            </li>
-            <li class="d-flex align-items-center">
-              <span class="me-2">🔹</span> Manteles
-            </li>
-            <li class="d-flex align-items-center">
-              <span class="me-2">🔹</span> Baños completos
-            </li>
-            <li class="d-flex align-items-center">
-              <span class="me-2">🔹</span> Wifi
-            </li>
+            }
           </ul>
         </div>
-
       </div>
     </div>
   </div>
@@ -40,14 +25,12 @@
       <div class="bg-dark text-white h-100 project">
         <div class="d-flex h-100">
           <div class="project-text w-100 my-auto text-lg-left">
-            <h3 class="fw-bold mb-2">Servicios adicionales</h3>
+            <h3 class="fw-bold mb-2">{{additionalTitle}}</h3>
+            @for (item of additional; track $index) {
             <p class="mb-2 d-flex align-items-start">
-              <span class="me-2">🔹</span> Catering: Disfrutá de tu evento con tranquilidad, nosotros nos encargamos del
-              resto.
+              <span class="me-2">🔹</span> {{item}}
             </p>
-            <p class="mb-0 d-flex align-items-start">
-              <span class="me-2">🔹</span> Contratos, presupuestos y asesoramientos personalizados.
-            </p>
+            }
           </div>
         </div>
       </div>
@@ -60,16 +43,12 @@
       <div class="bg-dark text-white h-100 project">
         <div class="d-flex h-100">
           <div class="project-text w-100 my-auto text-lg-right">
-            <h3 class="fw-bold mb-2">Servicios opcionales</h3>
-            <p class="mb-0 d-flex align-items-start">
-              <span class="me-2">🔹</span> Parrilleros.
+            <h3 class="fw-bold mb-2">{{optionalTitle}}</h3>
+            @for (item of optional; track $index) {
+            <p class="mb-2 d-flex align-items-start">
+              <span class="me-2">🔹</span> {{item}}
             </p>
-            <p class="mb-0 d-flex align-items-start">
-              <span class="me-2">🔹</span> Barra móvil: tragos y bebidas con y sin alcohol.
-            </p>
-            <p class="mb-0 d-flex align-items-start">
-              <span class="me-2">🔹</span> Bartender.
-            </p>
+            }
           </div>
         </div>
       </div>
