@@ -8,5 +8,7 @@ import { GoogleMapComponent } from "../../../../shared/components/google-map/goo
   styleUrl: './location.component.scss'
 })
 export class LocationComponent {
-
+  title = 'Palpalá, Jujuy, Argentina 🇦🇷'
+  description = `Ubicada en nuestra querida cuidad con el objetivo de estar
+  cerca de nuestros seres queridos, amigos y conocidos.`
 }
