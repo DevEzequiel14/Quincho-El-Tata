@@ -24,4 +24,7 @@ import { WhatsappComponent } from '../../shared/components/whatsapp/whatsapp.com
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  title = 'Quincho El Tata';
+  subTitle = 'Un lugar para disfrutar';
+  btnText = 'Mas información'
 }
