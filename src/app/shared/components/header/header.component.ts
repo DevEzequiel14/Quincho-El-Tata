@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
 import { HeaderMenuComponent } from "./header-menu/header-menu.component";
 import { HeaderToggleComponent } from "./header-toggle/header-toggle.component";
@@ -34,5 +34,13 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeMenuOnOutsideClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.navbar') && !target.closest('.menu-button')) {
+      this.isMenuOpen = false;
+    }
   }
 }
