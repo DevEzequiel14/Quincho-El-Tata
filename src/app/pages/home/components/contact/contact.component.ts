@@ -9,4 +9,10 @@ import { SocialComponent } from '../../../../shared/components/social/social.com
 })
 export class ContactComponent {
 
+  directionTitle = 'Dirección'
+  direction = 'C. Puerto Argentino 1789, Palpalá, Jujuy'
+  phone = 'Teléfonos'
+  phone1 = '+54 9 388 5054451'
+  phone2 = '+54 9 388 4773005'
+
 }
