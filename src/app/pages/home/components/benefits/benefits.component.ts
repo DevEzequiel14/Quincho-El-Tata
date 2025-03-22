@@ -31,4 +31,8 @@ export class BenefitsComponent {
     'Barra móvil: tragos y bebidas con y sin alcohol.',
     'Bartender',
   ]
+
+  imgMainSrc = 'icons/benefits.webp'
+  imgAdditionalSrc = 'icons/benefits-1.webp'
+  imgOptionalSrc = 'icons/benefits-2.webp'
 }

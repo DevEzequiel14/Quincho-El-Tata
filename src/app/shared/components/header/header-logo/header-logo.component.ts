@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header-logo.component.scss'
 })
 export class HeaderLogoComponent {
-
+  imgSrc = 'icons/logo-mini.webp';
 }

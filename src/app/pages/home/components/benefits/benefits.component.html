@@ -1,7 +1,7 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0 rounded shadow-lg img-responsive"
-        src="icons/benefits.webp" alt="..." /></div>
+        [src]="imgMainSrc" alt="..." /></div>
     <div class="col-xl-4 col-lg-5">
       <div class="featured-text text-lg-start">
         <h4 class="fw-bold">{{mainTitle}}</h4>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-    <div class="col-lg-6"><img class="img-fluid" src="icons/benefits-1.webp" alt="..." />
+    <div class="col-lg-6"><img class="img-fluid" [src]="imgAdditionalSrc" alt="..." />
     </div>
     <div class="col-lg-6">
       <div class="bg-dark text-white h-100 project">
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="row gx-0 justify-content-center">
-    <div class="col-lg-6"><img class="img-fluid" src="icons/benefits-2.webp" alt="..." />
+    <div class="col-lg-6"><img class="img-fluid" [src]="imgOptionalSrc" alt="..." />
     </div>
     <div class="col-lg-6 order-lg-first">
       <div class="bg-dark text-white h-100 project">
