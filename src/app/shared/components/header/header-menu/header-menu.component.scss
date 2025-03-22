@@ -44,15 +44,20 @@
     backdrop-filter: blur(40px);
     width: 100%;
     text-align: center;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
 
     ul {
       flex-direction: column;
       gap: 10px;
+      width: inherit;
     }
 
     &.open {
-      display: block;
+      max-height: 300px;
+      opacity: 1;
     }
 
     &.scrolled {
