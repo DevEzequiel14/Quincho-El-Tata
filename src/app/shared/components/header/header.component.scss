@@ -1,11 +1,12 @@
- @use "../../../../styles";
+@use "../../../../styles";
 
 .header {
   background-color: transparent;
   padding: 15px 0;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   z-index: 1000;
 
   &.scrolled {
@@ -13,7 +14,7 @@
     color: styles.$text-color-secondary;
   }
 
-  .container{
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -21,5 +22,17 @@
     align-items: center;
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: styles.$color-bg-white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1040;
   }
 }
