@@ -11,7 +11,6 @@ export class HeaderMenuComponent {
   @Input() isMenuOpen: boolean = false;
 
   menu = [
-    { text: 'Inicio', href: 'home' },
     { text: 'Nosotros', href: 'about' },
     { text: 'Servicios', href: 'benefits' },
     { text: 'Contacto', href: 'contact' },
@@ -19,5 +18,6 @@ export class HeaderMenuComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    document.body.style.overflow = '';
   }
 }

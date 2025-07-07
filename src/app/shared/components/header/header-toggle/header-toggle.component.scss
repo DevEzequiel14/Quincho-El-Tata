@@ -13,6 +13,7 @@
 
   @media (max-width: 768px) {
     display: block;
+    color: styles.$text-color-secondary;
 
     &.scrolled {
       color: styles.$text-color-secondary;

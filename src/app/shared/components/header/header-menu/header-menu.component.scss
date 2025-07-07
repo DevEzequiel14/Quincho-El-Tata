@@ -37,31 +37,29 @@
   }
 
   @media (max-width: 768px) {
-    position: absolute;
-    top: 79px;
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: transparent;
-    backdrop-filter: blur(40px);
-    width: 100%;
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    z-index: 999;
     opacity: 0;
-    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     ul {
       flex-direction: column;
-      gap: 10px;
-      width: inherit;
+      gap: 2rem;
     }
 
     &.open {
-      max-height: 300px;
       opacity: 1;
-    }
-
-    &.scrolled {
-      background: styles.$color-bg-white;
+      pointer-events: all;
     }
   }
 }
