@@ -26,7 +26,7 @@
     ul {
       li {
         a {
-          color: styles.$text-color-primary;
+          color: styles.$text-color-secondary;
 
           &:hover {
             color: styles.$color-hover;
@@ -34,6 +34,10 @@
         }
       }
     }
+  }
+
+  .close-btn {
+    display: none;
   }
 
   @media (max-width: 768px) {
@@ -67,7 +71,22 @@
       font-size: 1.5rem;
     }
 
+    &.scrolled {
+      ul {
+        li {
+          a {
+            color: styles.$text-color-primary;
+
+            &:hover {
+              color: styles.$color-hover;
+            }
+          }
+        }
+      }
+    }
+
     .close-btn {
+      display: block;
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
