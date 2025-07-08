@@ -26,7 +26,7 @@
     ul {
       li {
         a {
-          color: styles.$text-color-secondary;
+          color: styles.$text-color-primary;
 
           &:hover {
             color: styles.$color-hover;
@@ -47,6 +47,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
+    background-color: rgba(var(--bs-dark-rgb), 1) !important;
 
     display: flex;
     justify-content: center;
@@ -64,6 +65,29 @@
 
     a {
       font-size: 1.5rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: styles.$text-color-primary;
+      cursor: pointer;
+      z-index: 1001;
+      transition:
+        color 0.3s ease-in-out,
+        transform 0.2s;
+
+      &:hover {
+        color: styles.$color-hover;
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 }

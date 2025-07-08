@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../../shared/components/header/header.component";
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { AboutComponent } from "./components/about/about.component";
 import { ContactComponent } from './components/contact/contact.component';
@@ -11,7 +10,6 @@ import { WhatsappComponent } from '../../shared/components/whatsapp/whatsapp.com
 @Component({
   selector: 'app-home',
   imports: [
-    HeaderComponent,
     FooterComponent,
     AboutComponent,
     ContactComponent,
