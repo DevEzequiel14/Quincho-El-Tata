@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
 
 @Component({
   selector: 'app-about',
@@ -21,7 +22,7 @@ export class AboutComponent {
   ];
 
   note = 'Los precios varían según el tipo de evento y el mes en curso.';
-  urlWhatsApp = 'https://wa.me/+5493885054451?text=Hola, quisiera información sobre el alquiler del quincho. ¡Gracias!';
+  urlWhatsApp = CONTACT_CONFIG.whatsAppUrl;
   btnText = 'Consultar disponibilidad';
   imgSrc = '/icons/about.webp';
   imgAlt = 'Quincho con pileta';
