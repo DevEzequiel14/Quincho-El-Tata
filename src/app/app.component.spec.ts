@@ -20,10 +20,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('quincho');
   });
 
-  it('should render title', () => {
+  it('should render header and router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, quincho');
+    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });
