@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ScrollChangeDirective } from '../../../directives/scroll-change.directive';
 
 @Component({
@@ -9,15 +9,15 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
 })
 export class HeaderMenuComponent {
   @Input() isMenuOpen: boolean = false;
+  @Output() menuClose = new EventEmitter<void>();
 
   menu = [
     { text: 'Nosotros', href: 'about' },
     { text: 'Servicios', href: 'benefits' },
     { text: 'Contacto', href: 'contact' },
-  ]
+  ];
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-    document.body.style.overflow = '';
+  closeMenu(): void {
+    this.menuClose.emit();
   }
 }

@@ -32,20 +32,24 @@ export class HeaderComponent {
     });
   }
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-    if (this.isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+  toggleMenu(): void {
+    this.setMenuOpen(!this.isMenuOpen);
+  }
+
+  closeMenu(): void {
+    this.setMenuOpen(false);
+  }
+
+  private setMenuOpen(open: boolean): void {
+    this.isMenuOpen = open;
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
   @HostListener('document:click', ['$event'])
   closeMenuOnOutsideClick(event: Event) {
     const target = event.target as HTMLElement;
     if (!target.closest('.navbar') && !target.closest('.menu-button')) {
-      this.isMenuOpen = false;
+      this.closeMenu();
     }
   }
 }
