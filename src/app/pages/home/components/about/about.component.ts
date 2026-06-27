@@ -23,6 +23,6 @@ export class AboutComponent {
   note = 'Los precios varían según el tipo de evento y el mes en curso.';
   urlWhatsApp = 'https://wa.me/+5493885054451?text=Hola, quisiera información sobre el alquiler del quincho. ¡Gracias!';
   btnText = 'Consultar disponibilidad';
-  imgSrc = 'icons/about.webp';
+  imgSrc = '/icons/about.webp';
   imgAlt = 'Quincho con pileta';
 }

@@ -32,7 +32,7 @@ export class BenefitsComponent {
     'Bartender',
   ]
 
-  imgMainSrc = 'icons/benefits.webp'
-  imgAdditionalSrc = 'icons/benefits-1.webp'
-  imgOptionalSrc = 'icons/benefits-2.webp'
+  imgMainSrc = '/icons/benefits.webp';
+  imgAdditionalSrc = '/icons/benefits-1.webp';
+  imgOptionalSrc = '/icons/benefits-2.webp';
 }
