@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
-  title = 'Quicho con Pileta'
+  title = 'Quincho con Pileta';
   description = `Disfruta de un espacio exclusivo para eventos, con todas las
   comodidades y una hermosa pileta. Nuestro salón está totalmente habilitado
   para celebraciones de todo tipo, ofreciendo una experiencia única en un
