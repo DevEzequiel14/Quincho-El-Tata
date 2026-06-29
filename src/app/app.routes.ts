@@ -6,4 +6,9 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
+  {
+    path: 'galeria',
+    loadComponent: () =>
+      import('./pages/gallery/gallery-page.component').then((m) => m.GalleryPageComponent),
+  },
 ];

@@ -20,6 +20,14 @@
   <app-benefits></app-benefits>
 </section>
 
+<section class="gallery-section bg-dark text-white" id="galeria" appScrollAnimate>
+  @defer (on viewport) {
+    <app-gallery />
+  } @placeholder {
+    <div class="container py-5 text-center text-white-50">Cargando galería...</div>
+  }
+</section>
+
 <section class="contact-section bg-dark" id="contact" appScrollAnimate>
   <app-contact></app-contact>
 </section>

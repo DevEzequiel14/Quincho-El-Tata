@@ -15,6 +15,7 @@ export class HeaderMenuComponent {
   menu = [
     { text: 'Nosotros', href: 'about' },
     { text: 'Servicios', href: 'benefits' },
+    { text: 'Galería', href: 'galeria' },
     { text: 'Contacto', href: 'contact' },
   ];
 
