@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quinchoeltata.netlify.app/sitemap.xml
