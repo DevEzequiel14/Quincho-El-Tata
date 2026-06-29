@@ -25,6 +25,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -33,13 +38,10 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/bootstrap-custom.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": [
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -94,6 +96,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -102,6 +109,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/bootstrap-custom.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
