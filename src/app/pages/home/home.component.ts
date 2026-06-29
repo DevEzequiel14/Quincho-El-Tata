@@ -5,6 +5,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { LocationComponent } from './components/location/location.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { PricingComponent } from './components/pricing/pricing.component';
 import { ScrollAnimateDirective } from '../../shared/directives/scroll-animate.directive';
 import { WhatsappComponent } from '../../shared/components/whatsapp/whatsapp.component';
 
@@ -17,6 +18,7 @@ import { WhatsappComponent } from '../../shared/components/whatsapp/whatsapp.com
     BenefitsComponent,
     LocationComponent,
     GalleryComponent,
+    PricingComponent,
     ScrollAnimateDirective,
     WhatsappComponent,
   ],

@@ -1,0 +1,42 @@
+<div class="container px-4 px-lg-5 py-5">
+  <h2 class="text-center fw-bold mb-3">{{ config.title }}</h2>
+  <p class="text-center lead mb-2">{{ config.subtitle }}</p>
+  <p class="text-center small text-muted mb-5" role="note">{{ config.disclaimer }}</p>
+
+  <div class="row g-4 justify-content-center mb-5">
+    @for (plan of config.plans; track plan.name) {
+      <div class="col-md-6 col-lg-4">
+        <article
+          class="pricing-card h-100 p-4 rounded shadow-sm"
+          [class.pricing-card--highlighted]="plan.highlighted"
+        >
+          @if (plan.highlighted) {
+            <p class="pricing-card__badge small fw-semibold text-uppercase mb-2">Más elegido</p>
+          }
+          <h3 class="h4 fw-bold mb-2">{{ plan.name }}</h3>
+          <p class="text-muted mb-3">{{ plan.description }}</p>
+          <p class="pricing-card__price display-6 fw-bold mb-4">{{ plan.priceLabel }}</p>
+          <ul class="list-unstyled mb-0">
+            @for (feature of plan.features; track feature) {
+              <li class="d-flex align-items-start mb-2">
+                <span class="me-2" aria-hidden="true">✓</span>
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+        </article>
+      </div>
+    }
+  </div>
+
+  <div class="text-center">
+    <a
+      class="btn btn-success btn-lg fw-semibold"
+      [href]="whatsAppUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ config.cta.label }}
+    </a>
+  </div>
+</div>

@@ -31,6 +31,7 @@ export class HeaderMenuComponent {
     { text: 'Nosotros', id: 'about' },
     { text: 'Servicios', id: 'benefits' },
     { text: 'Galería', id: 'galeria' },
+    { text: 'Precios', id: 'precios' },
     { text: 'Contacto', id: 'contact' },
   ];
 
