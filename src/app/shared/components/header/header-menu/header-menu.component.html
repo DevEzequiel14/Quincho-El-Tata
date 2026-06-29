@@ -24,9 +24,9 @@
     </svg>
   </button>
   <ul>
-    @for (item of menu; track $index) {
+    @for (item of menu; track item.id) {
       <li>
-        <a href="#{{ item.href }}" (click)="closeMenu()">{{ item.text }}</a>
+        <a [href]="'#' + item.id" (click)="navigateToSection(item.id, $event)">{{ item.text }}</a>
       </li>
     }
   </ul>

@@ -1,5 +1,18 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  Output,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import { ScrollChangeDirective } from '../../../directives/scroll-change.directive';
+
+interface MenuItem {
+  text: string;
+  id: string;
+}
 
 @Component({
   selector: 'app-header-menu',
@@ -9,15 +22,23 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderMenuComponent {
+  private readonly router = inject(Router);
+
   @Input() isMenuOpen = false;
   @Output() menuClose = new EventEmitter<void>();
 
-  menu = [
-    { text: 'Nosotros', href: 'about' },
-    { text: 'Servicios', href: 'benefits' },
-    { text: 'Galería', href: 'galeria' },
-    { text: 'Contacto', href: 'contact' },
+  menu: MenuItem[] = [
+    { text: 'Nosotros', id: 'about' },
+    { text: 'Servicios', id: 'benefits' },
+    { text: 'Galería', id: 'galeria' },
+    { text: 'Contacto', id: 'contact' },
   ];
+
+  navigateToSection(sectionId: string, event: Event): void {
+    event.preventDefault();
+    this.closeMenu();
+    void this.router.navigate(['/'], { fragment: sectionId });
+  }
 
   closeMenu(): void {
     this.menuClose.emit();

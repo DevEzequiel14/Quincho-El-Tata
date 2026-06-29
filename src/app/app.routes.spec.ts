@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router } from '@angular/router';
 
 import { routes } from './app.routes';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 
 describe('App routes', () => {
@@ -15,18 +14,19 @@ describe('App routes', () => {
     router = TestBed.inject(Router);
   });
 
-  it('should register a wildcard route for NotFoundComponent', () => {
-    const wildcard = routes.find((route) => route.path === '**');
-    expect(wildcard?.component).toBe(NotFoundComponent);
-  });
-
   it('should keep home at the root path without lazy loading', () => {
     const home = routes.find((route) => route.path === '');
     expect(home?.component).toBe(HomeComponent);
     expect(home?.loadComponent).toBeUndefined();
   });
 
-  it('should match NotFoundComponent for unknown URLs', async () => {
+  it('should lazy load the not found wildcard route', () => {
+    const wildcard = routes.find((route) => route.path === '**');
+    expect(wildcard?.loadComponent).toBeDefined();
+    expect(wildcard?.component).toBeUndefined();
+  });
+
+  it('should match lazy not found for unknown URLs', async () => {
     await router.navigateByUrl('/ruta-inexistente');
 
     let route = router.routerState.snapshot.root;
@@ -34,6 +34,6 @@ describe('App routes', () => {
       route = route.firstChild;
     }
 
-    expect(route.routeConfig?.component).toBe(NotFoundComponent);
+    expect(route.routeConfig?.loadComponent).toBeDefined();
   });
 });
