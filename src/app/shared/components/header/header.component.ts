@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, inject, ViewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
@@ -18,17 +18,31 @@ export class HeaderComponent {
   private readonly responsiveService = inject(ResponsiveService);
   readonly isMobile = toSignal(this.responsiveService.isMobile(), { initialValue: false });
 
+  @ViewChild(HeaderToggleComponent) menuToggle?: HeaderToggleComponent;
+
   toggleMenu(): void {
     this.setMenuOpen(!this.isMenuOpen);
   }
 
   closeMenu(): void {
+    const wasOpen = this.isMenuOpen;
     this.setMenuOpen(false);
+
+    if (wasOpen && this.isMobile()) {
+      queueMicrotask(() => this.menuToggle?.focus());
+    }
   }
 
   private setMenuOpen(open: boolean): void {
     this.isMenuOpen = open;
     document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isMenuOpen) {
+      this.closeMenu();
+    }
   }
 
   @HostListener('document:click', ['$event'])

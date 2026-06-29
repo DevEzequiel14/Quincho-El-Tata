@@ -39,4 +39,25 @@ describe('HeaderMenuComponent', () => {
 
     expect(router.navigate).toHaveBeenCalledWith(['/'], { fragment: 'contact' });
   });
+
+  it('should mark the mobile menu as inert when closed', () => {
+    fixture.componentRef.setInput('isMobileView', true);
+    fixture.componentRef.setInput('isMenuOpen', false);
+    fixture.detectChanges();
+
+    const nav: HTMLElement = fixture.nativeElement.querySelector('#primary-navigation');
+    expect(nav.getAttribute('aria-hidden')).toBe('true');
+    expect(nav.hasAttribute('inert')).toBeTrue();
+  });
+
+  it('should close the menu on Escape', () => {
+    fixture.componentRef.setInput('isMobileView', true);
+    fixture.componentRef.setInput('isMenuOpen', true);
+    fixture.detectChanges();
+
+    spyOn(component, 'closeMenu');
+    fixture.nativeElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+
+    expect(component.closeMenu).toHaveBeenCalled();
+  });
 });

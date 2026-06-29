@@ -14,9 +14,14 @@
         color: styles.$text-color-primary;
         font-weight: bold;
         transition: color 0.3s;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 
         &:hover {
           color: styles.$color-hover;
+        }
+
+        &:focus-visible {
+          text-shadow: none;
         }
       }
     }
@@ -27,6 +32,7 @@
       li {
         a {
           color: styles.$text-color-secondary;
+          text-shadow: none;
 
           &:hover {
             color: styles.$color-hover;
@@ -101,6 +107,11 @@
 
       &:hover {
         color: styles.$color-hover;
+      }
+
+      &:focus-visible {
+        outline: 3px solid styles.$color-primary;
+        outline-offset: 2px;
       }
 
       svg {

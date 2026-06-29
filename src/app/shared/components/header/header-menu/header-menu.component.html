@@ -1,11 +1,16 @@
 <nav
+  #navPanel
+  id="primary-navigation"
   class="navbar"
   [class.open]="isMenuOpen"
+  aria-label="Navegación principal"
+  [attr.aria-hidden]="isMobileView && !isMenuOpen ? true : null"
+  [attr.inert]="isMobileView && !isMenuOpen ? true : null"
   appScrollChange
   scrollClass="scrolled"
   [scrollThreshold]="50"
 >
-  <button class="close-btn" (click)="closeMenu()" aria-label="Cerrar menú">
+  <button type="button" class="close-btn" (click)="closeMenu()" aria-label="Cerrar menú">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -17,6 +22,8 @@
       stroke-linecap="round"
       stroke-linejoin="round"
       class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+      aria-hidden="true"
+      focusable="false"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />

@@ -10,7 +10,7 @@
           <ul class="list-unstyled">
             @for (detail of details; track $index) {
               <li class="d-flex align-items-center">
-                <i class="bi {{ detail.icon }} me-2"></i>
+                <i class="bi {{ detail.icon }} me-2" aria-hidden="true"></i>
                 <span [innerHTML]="detail.texto"></span>
               </li>
             }

@@ -1,10 +1,10 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
+  AfterViewInit,
   Directive,
   ElementRef,
   HostListener,
   Input,
-  OnInit,
   PLATFORM_ID,
   Renderer2,
   inject,
@@ -13,7 +13,7 @@ import {
 @Directive({
   selector: '[appScrollChange]',
 })
-export class ScrollChangeDirective implements OnInit {
+export class ScrollChangeDirective implements AfterViewInit {
   @Input() scrollClass = '';
   @Input() scrollThreshold = 0;
 
@@ -21,18 +21,27 @@ export class ScrollChangeDirective implements OnInit {
   private readonly renderer = inject(Renderer2);
   private readonly platformId = inject(PLATFORM_ID);
 
-  ngOnInit(): void {
-    this.onWindowScroll();
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Evaluar tras el layout para no heredar estado de scroll restaurado incorrectamente.
+      requestAnimationFrame(() => this.updateScrollState());
+    }
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      if (window.scrollY > this.scrollThreshold) {
-        this.renderer.addClass(this.elem.nativeElement, this.scrollClass);
-      } else {
-        this.renderer.removeClass(this.elem.nativeElement, this.scrollClass);
-      }
+    this.updateScrollState();
+  }
+
+  private updateScrollState(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    if (window.scrollY > this.scrollThreshold) {
+      this.renderer.addClass(this.elem.nativeElement, this.scrollClass);
+    } else {
+      this.renderer.removeClass(this.elem.nativeElement, this.scrollClass);
     }
   }
 }

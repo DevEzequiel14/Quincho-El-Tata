@@ -20,9 +20,49 @@ body {
   height: auto;
 }
 
-main,
-.main-content,
-.masthead,
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background-color: $color-bg-white;
+  color: $color-bg-black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid $color-primary;
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
+// Offset para secciones con ancla (no en main/masthead: el hero debe llegar al tope bajo el header transparente).
+#about,
+#benefits,
+#galeria,
+#precios,
+#contact,
+#location {
+  scroll-margin-top: 80px;
+}
+
 .about-section,
 .projects-section {
   padding-top: 80px;

@@ -1,4 +1,5 @@
 <div class="container px-4 px-lg-5">
+  <h2 class="visually-hidden">Servicios</h2>
   <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
     <div class="col-xl-8 col-lg-7">
       <img
@@ -13,12 +14,14 @@
     </div>
     <div class="col-xl-4 col-lg-5">
       <div class="featured-text text-lg-start">
-        <h4 class="fw-bold">{{ mainTitle }}</h4>
+        <h3 class="h4 fw-bold">{{ mainTitle }}</h3>
         <p class="mb-0 lead">{{ mainDescription }}</p>
         <div class="mt-4">
           <ul class="list-unstyled">
             @for (item of main; track $index) {
-              <li class="d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</li>
+              <li class="d-flex align-items-start">
+                <span class="me-2" aria-hidden="true">🔹</span> {{ item }}
+              </li>
             }
           </ul>
         </div>
@@ -43,7 +46,9 @@
           <div class="project-text w-100 my-auto text-lg-left">
             <h3 class="fw-bold mb-2">{{ additionalTitle }}</h3>
             @for (item of additional; track $index) {
-              <p class="mb-2 d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</p>
+              <p class="mb-2 d-flex align-items-start">
+                <span class="me-2" aria-hidden="true">🔹</span> {{ item }}
+              </p>
             }
           </div>
         </div>
@@ -68,7 +73,9 @@
           <div class="project-text w-100 my-auto text-lg-right">
             <h3 class="fw-bold mb-2">{{ optionalTitle }}</h3>
             @for (item of optional; track $index) {
-              <p class="mb-2 d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</p>
+              <p class="mb-2 d-flex align-items-start">
+                <span class="me-2" aria-hidden="true">🔹</span> {{ item }}
+              </p>
             }
           </div>
         </div>

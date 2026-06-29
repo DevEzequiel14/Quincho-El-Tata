@@ -38,4 +38,14 @@ describe('HeaderComponent', () => {
     expect(component.isMenuOpen).toBeFalse();
     expect(document.body.style.overflow).toBe('');
   });
+
+  it('should close the mobile menu when Escape is pressed', () => {
+    component.toggleMenu();
+    expect(component.isMenuOpen).toBeTrue();
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+
+    expect(component.isMenuOpen).toBeFalse();
+    expect(document.body.style.overflow).toBe('');
+  });
 });

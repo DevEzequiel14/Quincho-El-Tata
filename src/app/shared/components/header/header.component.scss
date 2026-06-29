@@ -27,12 +27,10 @@
 
 @media (max-width: 768px) {
   .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: styles.$color-bg-white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 1040;
+
+    &.scrolled {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
   }
 }

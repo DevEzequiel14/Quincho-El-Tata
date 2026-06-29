@@ -3,7 +3,7 @@
   <p class="text-center lead mb-4">{{ description }}</p>
 
   @if (hasPlaceholders) {
-    <p class="text-center small text-white-50 mb-5" role="note">
+    <p class="text-center small gallery-note mb-5" role="note">
       Algunas imágenes son provisionales hasta incorporar la galería fotográfica definitiva.
     </p>
   }
@@ -21,7 +21,7 @@
             loading="lazy"
             decoding="async"
           />
-          <figcaption class="small mt-2 text-white-50">{{ image.caption }}</figcaption>
+          <figcaption class="small mt-2 gallery-caption">{{ image.caption }}</figcaption>
         </figure>
       </div>
     }

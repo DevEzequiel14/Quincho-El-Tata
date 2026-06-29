@@ -1,9 +1,16 @@
 <header class="header" appScrollChange scrollClass="scrolled" [scrollThreshold]="50">
   <div class="container">
     <app-header-logo></app-header-logo>
-    <app-header-menu [isMenuOpen]="isMenuOpen" (menuClose)="closeMenu()"></app-header-menu>
+    <app-header-menu
+      [isMenuOpen]="isMenuOpen"
+      [isMobileView]="isMobile()"
+      (menuClose)="closeMenu()"
+    ></app-header-menu>
     @if (isMobile()) {
-      <app-header-toggle (clickEvent)="toggleMenu()"></app-header-toggle>
+      <app-header-toggle
+        [expanded]="isMenuOpen"
+        (clickEvent)="toggleMenu()"
+      ></app-header-toggle>
     }
   </div>
 </header>
