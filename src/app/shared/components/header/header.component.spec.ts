@@ -8,9 +8,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent]
-    })
-    .compileComponents();
+      imports: [HeaderComponent],
+    }).compileComponents();
 
     document.body.style.overflow = '';
     fixture = TestBed.createComponent(HeaderComponent);

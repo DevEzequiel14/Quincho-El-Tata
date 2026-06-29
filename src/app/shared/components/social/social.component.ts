@@ -5,7 +5,7 @@ import { CONTACT_CONFIG } from '../../../core/constants/contact.config';
   selector: 'app-social',
   imports: [],
   templateUrl: './social.component.html',
-  styleUrl: './social.component.scss'
+  styleUrl: './social.component.scss',
 })
 export class SocialComponent {
   readonly instagramUrl = CONTACT_CONFIG.instagramUrl;

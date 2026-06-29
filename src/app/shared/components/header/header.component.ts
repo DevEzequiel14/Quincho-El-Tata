@@ -8,18 +8,12 @@ import { ResponsiveService } from '../../../core/services/responsive.service';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    HeaderLogoComponent,
-    HeaderMenuComponent,
-    HeaderToggleComponent,
-    ScrollChangeDirective,
-  ],
+  imports: [HeaderLogoComponent, HeaderMenuComponent, HeaderToggleComponent, ScrollChangeDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-
   isMenuOpen = false;
   private readonly responsiveService = inject(ResponsiveService);
   readonly isMobile = toSignal(this.responsiveService.isMobile(), { initialValue: false });

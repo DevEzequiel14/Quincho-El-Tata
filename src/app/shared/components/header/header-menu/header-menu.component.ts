@@ -9,7 +9,7 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderMenuComponent {
-  @Input() isMenuOpen: boolean = false;
+  @Input() isMenuOpen = false;
   @Output() menuClose = new EventEmitter<void>();
 
   menu = [

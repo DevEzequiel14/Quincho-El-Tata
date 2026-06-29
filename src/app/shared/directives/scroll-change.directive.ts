@@ -1,19 +1,25 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Directive, ElementRef, HostListener, Inject, Input, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+  inject,
+} from '@angular/core';
 
 @Directive({
-  selector: '[appScrollChange]'
+  selector: '[appScrollChange]',
 })
 export class ScrollChangeDirective implements OnInit {
+  @Input() scrollClass = '';
+  @Input() scrollThreshold = 0;
 
-  @Input() scrollClass: string = '';
-  @Input() scrollThreshold: number = 0;
-
-  constructor(
-    private readonly elem: ElementRef,
-    private readonly renderer: Renderer2,
-    @Inject(PLATFORM_ID) private readonly platformId: object
-  ) { }
+  private readonly elem = inject(ElementRef);
+  private readonly renderer = inject(Renderer2);
+  private readonly platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
     this.onWindowScroll();

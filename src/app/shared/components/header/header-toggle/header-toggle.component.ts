@@ -9,10 +9,9 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderToggleComponent {
-
   @Output() clickEvent = new EventEmitter<void>();
 
-  onClick(){
+  onClick() {
     this.clickEvent.emit();
   }
 }

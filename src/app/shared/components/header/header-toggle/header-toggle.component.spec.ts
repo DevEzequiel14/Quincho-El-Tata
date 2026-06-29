@@ -8,9 +8,8 @@ describe('HeaderToggleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderToggleComponent]
-    })
-    .compileComponents();
+      imports: [HeaderToggleComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderToggleComponent);
     component = fixture.componentInstance;

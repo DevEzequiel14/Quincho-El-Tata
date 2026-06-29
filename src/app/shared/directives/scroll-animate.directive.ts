@@ -1,19 +1,26 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Directive, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  PLATFORM_ID,
+  Renderer2,
+  inject,
+} from '@angular/core';
 
 @Directive({
   standalone: true,
-  selector: '[appScrollAnimate]'
+  selector: '[appScrollAnimate]',
 })
 export class ScrollAnimateDirective implements AfterViewInit {
+  private readonly el = inject(ElementRef);
+  private readonly renderer = inject(Renderer2);
+  private readonly platformId = inject(PLATFORM_ID);
 
-  constructor(
-    private readonly el: ElementRef,
-    private readonly renderer: Renderer2,
-    @Inject(PLATFORM_ID) private readonly platformId: Object
-  ) {
+  constructor() {
     this.renderer.addClass(this.el.nativeElement, 'animate-fade-in');
   }
+
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       const observer = new IntersectionObserver(

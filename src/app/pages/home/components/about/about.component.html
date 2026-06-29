@@ -9,20 +9,25 @@
           <h3 class="h5 fw-semibold">Detalles del espacio</h3>
           <ul class="list-unstyled">
             @for (detail of details; track $index) {
-            <li class="d-flex align-items-center">
-              <i class="bi {{ detail.icon }} me-2"></i>
-              <span [innerHTML]="detail.texto"></span>
-            </li>
+              <li class="d-flex align-items-center">
+                <i class="bi {{ detail.icon }} me-2"></i>
+                <span [innerHTML]="detail.texto"></span>
+              </li>
             }
           </ul>
           <p class="fst-italic text-light small">{{ note }}</p>
         </div>
-        <a [href]="urlWhatsApp" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg fw-semibold">
+        <a
+          [href]="urlWhatsApp"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-success btn-lg fw-semibold"
+        >
           {{ btnText }}
         </a>
       </div>
       <div class="col-lg-6 text-center">
-        <img [src]="imgSrc" class="img-fluid rounded shadow-lg img-responsive" [alt]="imgAlt">
+        <img [src]="imgSrc" class="img-fluid rounded shadow-lg img-responsive" [alt]="imgAlt" />
       </div>
     </div>
   </div>

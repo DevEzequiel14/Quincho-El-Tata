@@ -8,9 +8,8 @@ describe('WhatsappComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WhatsappComponent]
-    })
-    .compileComponents();
+      imports: [WhatsappComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WhatsappComponent);
     component = fixture.componentInstance;

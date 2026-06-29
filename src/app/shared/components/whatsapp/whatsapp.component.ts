@@ -5,7 +5,7 @@ import { CONTACT_CONFIG } from '../../../core/constants/contact.config';
   selector: 'app-whatsapp',
   imports: [],
   templateUrl: './whatsapp.component.html',
-  styleUrl: './whatsapp.component.scss'
+  styleUrl: './whatsapp.component.scss',
 })
 export class WhatsappComponent {
   readonly whatsAppUrl = CONTACT_CONFIG.whatsAppUrl;

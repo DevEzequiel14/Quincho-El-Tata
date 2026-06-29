@@ -1,17 +1,21 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0 rounded shadow-lg img-responsive"
-        [src]="imgMainSrc" alt="Quincho con pileta y espacio verde para eventos familiares" loading="lazy" /></div>
+    <div class="col-xl-8 col-lg-7">
+      <img
+        class="img-fluid mb-3 mb-lg-0 rounded shadow-lg img-responsive"
+        [src]="imgMainSrc"
+        alt="Quincho con pileta y espacio verde para eventos familiares"
+        loading="lazy"
+      />
+    </div>
     <div class="col-xl-4 col-lg-5">
       <div class="featured-text text-lg-start">
-        <h4 class="fw-bold">{{mainTitle}}</h4>
-        <p class="mb-0 lead">{{mainDescription}}</p>
+        <h4 class="fw-bold">{{ mainTitle }}</h4>
+        <p class="mb-0 lead">{{ mainDescription }}</p>
         <div class="mt-4">
           <ul class="list-unstyled">
             @for (item of main; track $index) {
-            <li class="d-flex align-items-start">
-              <span class="me-2">🔹</span> {{item}}
-            </li>
+              <li class="d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</li>
             }
           </ul>
         </div>
@@ -19,18 +23,21 @@
     </div>
   </div>
   <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-    <div class="col-lg-6"><img class="img-fluid" [src]="imgAdditionalSrc"
-        alt="Salón del quincho con servicios de catering y asesoramiento" loading="lazy" />
+    <div class="col-lg-6">
+      <img
+        class="img-fluid"
+        [src]="imgAdditionalSrc"
+        alt="Salón del quincho con servicios de catering y asesoramiento"
+        loading="lazy"
+      />
     </div>
     <div class="col-lg-6">
       <div class="bg-dark text-white h-100 project">
         <div class="d-flex h-100">
           <div class="project-text w-100 my-auto text-lg-left">
-            <h3 class="fw-bold mb-2">{{additionalTitle}}</h3>
+            <h3 class="fw-bold mb-2">{{ additionalTitle }}</h3>
             @for (item of additional; track $index) {
-            <p class="mb-2 d-flex align-items-start">
-              <span class="me-2">🔹</span> {{item}}
-            </p>
+              <p class="mb-2 d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</p>
             }
           </div>
         </div>
@@ -38,18 +45,21 @@
     </div>
   </div>
   <div class="row gx-0 justify-content-center">
-    <div class="col-lg-6"><img class="img-fluid" [src]="imgOptionalSrc"
-        alt="Espacio exterior del quincho con zona de parrilla y barra móvil" loading="lazy" />
+    <div class="col-lg-6">
+      <img
+        class="img-fluid"
+        [src]="imgOptionalSrc"
+        alt="Espacio exterior del quincho con zona de parrilla y barra móvil"
+        loading="lazy"
+      />
     </div>
     <div class="col-lg-6 order-lg-first">
       <div class="bg-dark text-white h-100 project">
         <div class="d-flex h-100">
           <div class="project-text w-100 my-auto text-lg-right">
-            <h3 class="fw-bold mb-2">{{optionalTitle}}</h3>
+            <h3 class="fw-bold mb-2">{{ optionalTitle }}</h3>
             @for (item of optional; track $index) {
-            <p class="mb-2 d-flex align-items-start">
-              <span class="me-2">🔹</span> {{item}}
-            </p>
+              <p class="mb-2 d-flex align-items-start"><span class="me-2">🔹</span> {{ item }}</p>
             }
           </div>
         </div>
