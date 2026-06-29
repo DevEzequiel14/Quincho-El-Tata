@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ScrollChangeDirective } from '../../../directives/scroll-change.directive';
 
 @Component({
@@ -6,6 +6,7 @@ import { ScrollChangeDirective } from '../../../directives/scroll-change.directi
   imports: [ScrollChangeDirective],
   templateUrl: './header-menu.component.html',
   styleUrl: './header-menu.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderMenuComponent {
   @Input() isMenuOpen: boolean = false;

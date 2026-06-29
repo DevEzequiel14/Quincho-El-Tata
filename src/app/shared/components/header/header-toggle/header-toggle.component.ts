@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { ScrollChangeDirective } from '../../../directives/scroll-change.directive';
 
 @Component({
   selector: 'app-header-toggle',
   imports: [ScrollChangeDirective],
   templateUrl: './header-toggle.component.html',
-  styleUrl: './header-toggle.component.scss'
+  styleUrl: './header-toggle.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderToggleComponent {
 
