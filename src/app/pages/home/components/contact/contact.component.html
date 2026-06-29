@@ -57,6 +57,108 @@
       </div>
     </div>
   </div>
+
+  <div class="row mt-5 justify-content-center">
+    <div class="col-lg-8">
+      <div class="card py-4 contact-form-card">
+        <div class="card-body px-4">
+          <h3 class="h5 fw-bold text-center mb-4">Enviar consulta</h3>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="contact-nombre">Nombre</label>
+              <input
+                id="contact-nombre"
+                type="text"
+                class="form-control"
+                formControlName="nombre"
+                autocomplete="name"
+                [attr.aria-invalid]="isInvalid('nombre')"
+                [attr.aria-describedby]="isInvalid('nombre') ? 'contact-nombre-error' : null"
+              />
+              @if (getError('nombre'); as error) {
+                <div id="contact-nombre-error" class="form-text text-danger" role="alert">
+                  {{ error }}
+                </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="contact-telefono">Teléfono</label>
+              <input
+                id="contact-telefono"
+                type="tel"
+                class="form-control"
+                formControlName="telefono"
+                autocomplete="tel"
+                [attr.aria-invalid]="isInvalid('telefono')"
+                [attr.aria-describedby]="isInvalid('telefono') ? 'contact-telefono-error' : null"
+              />
+              @if (getError('telefono'); as error) {
+                <div id="contact-telefono-error" class="form-text text-danger" role="alert">
+                  {{ error }}
+                </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="contact-fecha">Fecha del evento (opcional)</label>
+              <input
+                id="contact-fecha"
+                type="date"
+                class="form-control"
+                formControlName="fecha"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="contact-mensaje">Mensaje</label>
+              <textarea
+                id="contact-mensaje"
+                class="form-control"
+                rows="4"
+                formControlName="mensaje"
+                [attr.aria-invalid]="isInvalid('mensaje')"
+                [attr.aria-describedby]="isInvalid('mensaje') ? 'contact-mensaje-error' : null"
+              ></textarea>
+              @if (getError('mensaje'); as error) {
+                <div id="contact-mensaje-error" class="form-text text-danger" role="alert">
+                  {{ error }}
+                </div>
+              }
+            </div>
+
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-success btn-lg fw-semibold"
+                [disabled]="submitStatus === 'loading'"
+                [attr.aria-busy]="submitStatus === 'loading'"
+              >
+                @if (submitStatus === 'loading') {
+                  Enviando...
+                } @else {
+                  Enviar por WhatsApp
+                }
+              </button>
+            </div>
+
+            @if (submitStatus === 'success') {
+              <p class="form-feedback form-feedback--success mt-3 mb-0" role="status">
+                Consulta preparada. Si no se abrió WhatsApp, revisá que el navegador permita
+                ventanas emergentes.
+              </p>
+            }
+            @if (submitStatus === 'error') {
+              <p class="form-feedback form-feedback--error mt-3 mb-0" role="alert">
+                No se pudo abrir WhatsApp. Intentá de nuevo o contactanos por teléfono.
+              </p>
+            }
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="mt-5">
     <app-social></app-social>
   </div>

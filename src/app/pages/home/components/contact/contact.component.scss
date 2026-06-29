@@ -21,3 +21,19 @@ svg {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
+
+.contact-form-card {
+  border-bottom: 0.25rem solid styles.$color-primary;
+}
+
+.form-feedback {
+  font-size: 0.9rem;
+}
+
+.form-feedback--success {
+  color: styles.$color-hover;
+}
+
+.form-feedback--error {
+  color: #b02a37;
+}
