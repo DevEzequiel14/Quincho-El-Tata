@@ -12,12 +12,29 @@ describe('HeaderComponent', () => {
     })
     .compileComponents();
 
+    document.body.style.overflow = '';
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    document.body.style.overflow = '';
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should toggle menu and lock body scroll when open', () => {
+    expect(component.isMenuOpen).toBeFalse();
+
+    component.toggleMenu();
+    expect(component.isMenuOpen).toBeTrue();
+    expect(document.body.style.overflow).toBe('hidden');
+
+    component.toggleMenu();
+    expect(component.isMenuOpen).toBeFalse();
+    expect(document.body.style.overflow).toBe('');
   });
 });
