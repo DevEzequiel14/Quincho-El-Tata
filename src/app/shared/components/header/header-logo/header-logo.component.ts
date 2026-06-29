@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
 
 @Component({
   selector: 'app-header-logo',
@@ -9,5 +10,5 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderLogoComponent {
-  imgSrc = '/icons/logo-mini.webp';
+  readonly image = IMAGE_ASSETS.logoMini;
 }

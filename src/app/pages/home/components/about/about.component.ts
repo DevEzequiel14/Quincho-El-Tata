@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
+import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
 
 @Component({
   selector: 'app-about',
@@ -26,6 +27,5 @@ export class AboutComponent {
   note = 'Los precios varían según el tipo de evento y el mes en curso.';
   urlWhatsApp = CONTACT_CONFIG.whatsAppUrl;
   btnText = 'Consultar disponibilidad';
-  imgSrc = '/icons/about.webp';
-  imgAlt = 'Quincho con pileta';
+  readonly image = IMAGE_ASSETS.about;
 }

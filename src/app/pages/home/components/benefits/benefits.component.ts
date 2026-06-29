@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
 
 @Component({
   selector: 'app-benefits',
@@ -28,7 +29,7 @@ export class BenefitsComponent {
   optionalTitle = 'Servicios opcionales';
   optional = ['Parrilleros', 'Barra móvil: tragos y bebidas con y sin alcohol.', 'Bartender'];
 
-  imgMainSrc = '/icons/benefits.webp';
-  imgAdditionalSrc = '/icons/benefits-1.webp';
-  imgOptionalSrc = '/icons/benefits-2.webp';
+  readonly imgMain = IMAGE_ASSETS.benefitsMain;
+  readonly imgAdditional = IMAGE_ASSETS.benefitsAdditional;
+  readonly imgOptional = IMAGE_ASSETS.benefitsOptional;
 }

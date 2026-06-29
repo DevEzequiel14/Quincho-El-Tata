@@ -1,5 +1,16 @@
 <section class="header-animation">
   <header class="masthead" id="home">
+    <img
+      class="masthead__image"
+      [src]="heroImage.src"
+      alt=""
+      [width]="heroImage.width"
+      [height]="heroImage.height"
+      fetchpriority="high"
+      decoding="async"
+      aria-hidden="true"
+    />
+    <div class="masthead__overlay" aria-hidden="true"></div>
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
       <div class="d-flex justify-content-center">
         <div class="text-center">
@@ -24,7 +35,9 @@
   @defer (on viewport) {
     <app-gallery />
   } @placeholder {
-    <div class="container py-5 text-center text-white-50">Cargando galería...</div>
+    <div class="container py-5 text-center text-white-50 gallery-section__placeholder">
+      Cargando galería...
+    </div>
   }
 </section>
 

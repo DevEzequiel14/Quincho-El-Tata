@@ -1,3 +1,11 @@
 <div class="logo">
-  <a routerLink="/" aria-label="Inicio"><img [src]="imgSrc" alt="Logo de Quincho El Tata" /></a>
+  <a routerLink="/">
+    <img
+      [src]="image.src"
+      [alt]="image.alt"
+      [width]="image.width"
+      [height]="image.height"
+      decoding="async"
+    />
+  </a>
 </div>

@@ -6,13 +6,28 @@
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),
-    url('/icons/main.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .masthead h1 {
@@ -69,6 +84,10 @@
 
 .gallery-section {
   padding: 4rem 0;
+
+  &__placeholder {
+    min-height: 24rem;
+  }
 }
 
 .pricing-section {

@@ -27,7 +27,15 @@
         </a>
       </div>
       <div class="col-lg-6 text-center">
-        <img [src]="imgSrc" class="img-fluid rounded shadow-lg img-responsive" [alt]="imgAlt" />
+        <img
+          [src]="image.src"
+          [alt]="image.alt"
+          [width]="image.width"
+          [height]="image.height"
+          class="img-fluid rounded shadow-lg img-responsive content-image"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </div>

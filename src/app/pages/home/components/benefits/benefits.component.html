@@ -2,10 +2,13 @@
   <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
     <div class="col-xl-8 col-lg-7">
       <img
-        class="img-fluid mb-3 mb-lg-0 rounded shadow-lg img-responsive"
-        [src]="imgMainSrc"
-        alt="Quincho con pileta y espacio verde para eventos familiares"
+        class="img-fluid mb-3 mb-lg-0 rounded shadow-lg img-responsive content-image"
+        [src]="imgMain.src"
+        [alt]="imgMain.alt"
+        [width]="imgMain.width"
+        [height]="imgMain.height"
         loading="lazy"
+        decoding="async"
       />
     </div>
     <div class="col-xl-4 col-lg-5">
@@ -25,10 +28,13 @@
   <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
     <div class="col-lg-6">
       <img
-        class="img-fluid"
-        [src]="imgAdditionalSrc"
-        alt="Salón del quincho con servicios de catering y asesoramiento"
+        class="img-fluid content-image"
+        [src]="imgAdditional.src"
+        [alt]="imgAdditional.alt"
+        [width]="imgAdditional.width"
+        [height]="imgAdditional.height"
         loading="lazy"
+        decoding="async"
       />
     </div>
     <div class="col-lg-6">
@@ -47,10 +53,13 @@
   <div class="row gx-0 justify-content-center">
     <div class="col-lg-6">
       <img
-        class="img-fluid"
-        [src]="imgOptionalSrc"
-        alt="Espacio exterior del quincho con zona de parrilla y barra móvil"
+        class="img-fluid content-image"
+        [src]="imgOptional.src"
+        [alt]="imgOptional.alt"
+        [width]="imgOptional.width"
+        [height]="imgOptional.height"
         loading="lazy"
+        decoding="async"
       />
     </div>
     <div class="col-lg-6 order-lg-first">
