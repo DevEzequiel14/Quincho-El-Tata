@@ -4,7 +4,7 @@
     <app-header-logo></app-header-logo>
     <app-header-menu [isMenuOpen]="isMenuOpen" (menuClose)="closeMenu()"></app-header-menu>
     @if (isMobile()) {
-      <app-header-toggle (click)="toggleMenu()"></app-header-toggle>
+      <app-header-toggle (clickEvent)="toggleMenu()"></app-header-toggle>
     }
   </div>
 </header>
