@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist/quincho/browser"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SSR vía @netlify/angular-runtime (dependencia en package.json).
+# No agregar redirects SPA /* → index.html: con SSR las rutas las maneja el runtime.
