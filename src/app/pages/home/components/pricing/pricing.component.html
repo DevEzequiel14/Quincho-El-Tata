@@ -5,21 +5,20 @@
 
   <div class="row g-4 justify-content-center mb-5">
     @for (plan of config.plans; track plan.name) {
-      <div class="col-md-6 col-lg-4">
-        <article
-          class="pricing-card h-100 p-4 rounded shadow-sm"
-          [class.pricing-card--highlighted]="plan.highlighted"
-        >
-          @if (plan.highlighted) {
-            <p class="pricing-card__badge small fw-semibold text-uppercase mb-2">Más elegido</p>
-          }
+      <div class="col-md-6 col-lg-5">
+        <article class="pricing-card h-100 p-4 rounded shadow-sm">
           <h3 class="h4 fw-bold mb-2">{{ plan.name }}</h3>
           <p class="text-muted mb-3">{{ plan.description }}</p>
-          <p class="pricing-card__price display-6 fw-bold mb-4">{{ plan.priceLabel }}</p>
+          <p class="pricing-card__price display-6 fw-bold" [class.mb-1]="plan.showPriceReferenceNote" [class.mb-4]="!plan.showPriceReferenceNote">
+            {{ plan.priceLabel }}
+          </p>
+          @if (plan.showPriceReferenceNote) {
+            <p class="pricing-card__price-note small text-muted mb-4">{{ config.priceReferenceNote }}</p>
+          }
           <ul class="list-unstyled mb-0">
             @for (feature of plan.features; track feature) {
               <li class="d-flex align-items-start mb-2">
-                <span class="me-2" aria-hidden="true">✓</span>
+                <span class="pricing-card__bullet me-2" aria-hidden="true">•</span>
                 <span>{{ feature }}</span>
               </li>
             }

@@ -10,18 +10,18 @@
     box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12) !important;
   }
 
-  &--highlighted {
-    border-color: var(--bs-success);
-    box-shadow: 0 0.5rem 1.5rem rgba(var(--bs-success-rgb), 0.15);
-  }
-
-  &__badge {
-    color: var(--bs-success);
-    letter-spacing: 0.05em;
-  }
-
   &__price {
     color: var(--bs-dark);
     line-height: 1.1;
+  }
+
+  &__price-note {
+    line-height: 1.4;
+  }
+
+  &__bullet {
+    color: #000;
+    font-weight: bold;
+    line-height: 1.5;
   }
 }

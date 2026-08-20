@@ -5,36 +5,27 @@ export interface PricingPlan {
   description: string;
   priceLabel: string;
   features: readonly string[];
-  highlighted?: boolean;
+  showPriceReferenceNote?: boolean;
 }
 
 export const PRICING_CONFIG = {
   title: 'Precios orientativos',
   subtitle: 'Valores de referencia para planificar tu evento. El presupuesto final se confirma por WhatsApp.',
+  priceReferenceNote: 'Precio de referencia; puede estar desactualizado.',
   disclaimer:
-    'Los montos pueden variar según fecha, cantidad de invitados, temporada y servicios adicionales. No incluyen reserva automática.',
+    'Los montos son orientativos y pueden variar según fecha, cantidad de invitados, temporada y servicios adicionales. No incluyen reserva automática.',
   plans: [
     {
-      name: 'Medio día',
-      description: 'Ideal para reuniones cortas o cumpleaños de tarde.',
-      priceLabel: 'Desde $180.000',
-      features: [
-        'Hasta 4 horas de uso',
-        'Quincho, pileta y espacio verde',
-        'Vajilla y mobiliario básico',
-      ],
-    },
-    {
       name: 'Día completo',
-      description: 'La opción más elegida para festejos familiares y eventos de día.',
+      description: 'Alquiler del quincho para festejos familiares y eventos de día.',
       priceLabel: 'Desde $280.000',
+      showPriceReferenceNote: true,
       features: [
         'Jornada extendida de uso',
         'Quincho, pileta y espacio verde',
         'Cocina equipada y baños',
         'Asadores techados',
       ],
-      highlighted: true,
     },
     {
       name: 'Evento a medida',
