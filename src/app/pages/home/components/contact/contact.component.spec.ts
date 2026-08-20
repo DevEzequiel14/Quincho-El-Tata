@@ -83,7 +83,7 @@ describe('ContactComponent', () => {
     });
 
     component.onSubmit();
-    expect(component.submitStatus).toBe('loading');
+    expect(component.submitStatus()).toBe('loading');
 
     tick(500);
 
@@ -93,7 +93,7 @@ describe('ContactComponent', () => {
     expect(url).toContain(encodeURIComponent('Juan Pérez'));
     expect(url).toContain(encodeURIComponent('2026-07-15'));
     expect(target).toBe('_blank');
-    expect(component.submitStatus).toBe('success');
+    expect(component.submitStatus()).toBe('success');
   }));
 
   it('should set error status when WhatsApp window cannot open', fakeAsync(() => {
@@ -109,6 +109,6 @@ describe('ContactComponent', () => {
     component.onSubmit();
     tick(500);
 
-    expect(component.submitStatus).toBe('error');
+    expect(component.submitStatus()).toBe('error');
   }));
 });
