@@ -8,7 +8,7 @@ Landing page de **Quincho El Tata** — alquiler de quincho con pileta para even
 
 ## Requisitos
 
-- **Node.js 20 LTS** (recomendado; mínimo 18.19 para Angular 19)
+- **Node.js 22 LTS** (recomendado; mínimo 22.22.3 para Angular 22)
 - **npm** 9+
 
 ## Instalación

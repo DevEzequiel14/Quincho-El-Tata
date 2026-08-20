@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SocialComponent } from '../../../../shared/components/social/social.component';
 import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
@@ -21,7 +21,7 @@ export class ContactComponent {
   phone1 = CONTACT_CONFIG.phones[0];
   phone2 = CONTACT_CONFIG.phones[1];
 
-  submitStatus: ContactSubmitStatus = 'idle';
+  readonly submitStatus = signal<ContactSubmitStatus>('idle');
 
   readonly contactForm = this.fb.nonNullable.group({
     nombre: ['', [Validators.required, Validators.minLength(2)]],
@@ -36,14 +36,14 @@ export class ContactComponent {
       return;
     }
 
-    this.submitStatus = 'loading';
+    this.submitStatus.set('loading');
 
     const message = this.buildInquiryMessage();
     const url = this.buildWhatsAppUrl(message);
 
     window.setTimeout(() => {
       const opened = window.open(url, '_blank', 'noopener,noreferrer');
-      this.submitStatus = opened ? 'success' : 'error';
+      this.submitStatus.set(opened ? 'success' : 'error');
     }, 500);
   }
 
@@ -76,13 +76,7 @@ export class ContactComponent {
     const { nombre, telefono, mensaje, fecha } = this.contactForm.getRawValue();
     const dateLine = fecha ? `\nFecha del evento: ${fecha}` : '';
 
-    return [
-      `Hola, soy ${nombre}.`,
-      `Teléfono: ${telefono}`,
-      dateLine,
-      '',
-      mensaje,
-    ]
+    return [`Hola, soy ${nombre}.`, `Teléfono: ${telefono}`, dateLine, '', mensaje]
       .filter((line) => line !== '')
       .join('\n');
   }

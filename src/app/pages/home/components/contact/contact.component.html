@@ -132,10 +132,10 @@
               <button
                 type="submit"
                 class="btn btn-success btn-lg fw-semibold"
-                [disabled]="submitStatus === 'loading'"
-                [attr.aria-busy]="submitStatus === 'loading'"
+                [disabled]="submitStatus() === 'loading'"
+                [attr.aria-busy]="submitStatus() === 'loading'"
               >
-                @if (submitStatus === 'loading') {
+                @if (submitStatus() === 'loading') {
                   Enviando...
                 } @else {
                   Enviar por WhatsApp
@@ -143,13 +143,13 @@
               </button>
             </div>
 
-            @if (submitStatus === 'success') {
+            @if (submitStatus() === 'success') {
               <p class="form-feedback form-feedback--success mt-3 mb-0" role="status">
                 Consulta preparada. Si no se abrió WhatsApp, revisá que el navegador permita
                 ventanas emergentes.
               </p>
             }
-            @if (submitStatus === 'error') {
+            @if (submitStatus() === 'error') {
               <p class="form-feedback form-feedback--error mt-3 mb-0" role="alert">
                 No se pudo abrir WhatsApp. Intentá de nuevo o contactanos por teléfono.
               </p>
