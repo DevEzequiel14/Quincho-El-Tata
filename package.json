@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:quincho": "node dist/quincho/server/server.mjs",
+    "serve:ssr:quincho": "node scripts/serve-ssr.mjs",
     "lint": "ng lint",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\"",
