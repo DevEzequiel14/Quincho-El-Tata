@@ -1,29 +1,102 @@
-@use '../../../../../styles.scss';
+.contact-header {
+  margin-bottom: 2rem;
 
-hr {
-  opacity: 1;
-  border-color: styles.$color-primary;
-  border-width: 0.25rem;
-  width: 3rem;
+  &__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--foam);
+  }
+
+  &__lede {
+    margin: 0.75rem auto 0;
+    max-width: 34rem;
+    font-size: 1.1rem;
+    color: color-mix(in srgb, var(--foam) 78%, transparent);
+  }
 }
 
-svg {
-  color: styles.$color-primary;
+.contact-primary {
+  &__cta.btn-brand {
+    min-width: min(100%, 20rem);
+    padding-inline: 1.5rem;
+  }
 }
 
-.card {
-  border: 0;
-  border-bottom: 0.25rem solid styles.$color-primary;
+.contact-phones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin: 1.35rem 0 0;
 }
 
-.card h4 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
+.contact-phone {
+  color: var(--foam);
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
 }
 
-.contact-form-card {
-  border-bottom: 0.25rem solid styles.$color-primary;
+.contact-form-panel {
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+  padding: 1.25rem 1.35rem;
+  background-color: var(--surface-day-elevated);
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--color-brand) 22%, transparent);
+
+  &__summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      float: right;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--color-brand-deep);
+    }
+  }
+
+  &[open] &__summary::after {
+    content: '−';
+  }
+
+  &__body {
+    margin-top: 1.25rem;
+  }
+
+  &__hint {
+    margin: 0 0 1.25rem;
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+  }
+
+  &:focus-within {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+.contact-social {
+  margin-top: 2.5rem;
 }
 
 .form-feedback {
@@ -31,7 +104,7 @@ svg {
 }
 
 .form-feedback--success {
-  color: styles.$color-hover;
+  color: var(--color-brand-deep);
 }
 
 .form-feedback--error {

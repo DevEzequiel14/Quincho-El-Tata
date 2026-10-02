@@ -8,28 +8,22 @@ import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
   styleUrl: './benefits.component.scss',
 })
 export class BenefitsComponent {
-  mainTitle = 'Servicio principal';
-  mainDescription =
-    'Quincho con pileta y espacio verde para poder disfrutar un lindo día junto a tus seres queridos.';
-  main = [
-    'Asadores techados, cocina con horno, heladera, freezer y vajilla de vidrio.',
-    'Pileta de 8x4m + pileta pequeña de 2x2m.',
-    'Mesas, sillas, bancas',
-    'Manteles',
-    'Baños completos',
-    'Wifi',
+  title = 'Qué incluye';
+  lede = 'Lo esencial del alquiler. Los extras se arman según tu evento.';
+
+  essentials = [
+    'Asadores techados, cocina equipada y vajilla.',
+    'Pileta 8×4 m + pileta chica 2×2 m.',
+    'Mesas, sillas, bancas y manteles.',
+    'Baños completos y WiFi.',
   ];
 
-  additionalTitle = 'Servicios adicionales';
-  additional = [
-    'Catering: Disfrutá de tu evento con tranquilidad, nosotros nos encargamos del resto.',
-    'Contratos, presupuestos y asesoramientos personalizados.',
+  extrasTitle = 'Extras a convenir';
+  extras = [
+    'Catering y asesoramiento del evento.',
+    'Contratos y presupuestos personalizados.',
+    'Parrillero, barra móvil y bartender.',
   ];
 
-  optionalTitle = 'Servicios opcionales';
-  optional = ['Parrilleros', 'Barra móvil: tragos y bebidas con y sin alcohol.', 'Bartender'];
-
-  readonly imgMain = IMAGE_ASSETS.benefitsMain;
-  readonly imgAdditional = IMAGE_ASSETS.benefitsAdditional;
-  readonly imgOptional = IMAGE_ASSETS.benefitsOptional;
+  readonly image = IMAGE_ASSETS.benefitsMain;
 }

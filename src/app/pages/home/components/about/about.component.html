@@ -1,27 +1,26 @@
-<section class="py-5 position-relative text-white">
-  <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
-  <div class="container position-relative">
+<section class="about py-5">
+  <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-        <h2 class="mb-4 fw-bold">{{ title }}</h2>
-        <p class="lead">{{ description }}</p>
-        <div class="mb-4">
-          <h3 class="h5 fw-semibold">Detalles del espacio</h3>
-          <ul class="list-unstyled">
+        <h2 class="about__title mb-3">{{ title }}</h2>
+        <p class="about__lede">{{ description }}</p>
+        <div class="about__details mb-4">
+          <h3 class="about__details-title">Detalles del espacio</h3>
+          <ul class="list-unstyled about__list">
             @for (detail of details; track $index) {
               <li class="d-flex align-items-center">
-                <i class="bi {{ detail.icon }} me-2" aria-hidden="true"></i>
+                <i class="bi {{ detail.icon }} about__icon me-2" aria-hidden="true"></i>
                 <span [innerHTML]="detail.texto"></span>
               </li>
             }
           </ul>
-          <p class="fst-italic text-light small">{{ note }}</p>
+          <p class="about__note">{{ note }}</p>
         </div>
         <a
           [href]="urlWhatsApp"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-success btn-lg fw-semibold"
+          class="btn btn-brand btn-lg fw-semibold"
         >
           {{ btnText }}
         </a>
@@ -32,7 +31,7 @@
           [alt]="image.alt"
           [width]="image.width"
           [height]="image.height"
-          class="img-fluid rounded shadow-lg img-responsive content-image"
+          class="img-fluid img-responsive content-image about__image"
           loading="lazy"
           decoding="async"
         />

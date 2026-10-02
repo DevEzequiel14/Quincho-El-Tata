@@ -36,11 +36,10 @@ export class HeaderMenuComponent implements OnChanges {
   @Output() menuClose = new EventEmitter<void>();
 
   menu: MenuItem[] = [
-    { text: 'Nosotros', id: 'about' },
-    { text: 'Servicios', id: 'benefits' },
-    { text: 'Galería', id: 'galeria' },
+    { text: 'Espacio', id: 'galeria' },
     { text: 'Precios', id: 'precios' },
     { text: 'Contacto', id: 'contact' },
+    { text: 'Ubicación', id: 'location' },
   ];
 
   ngOnChanges(changes: SimpleChanges): void {

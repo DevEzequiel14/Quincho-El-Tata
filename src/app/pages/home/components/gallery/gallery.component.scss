@@ -1,9 +1,109 @@
-.gallery-item__image {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.gallery-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--foam);
 }
 
-.gallery-caption,
-.gallery-note {
-  color: #d8d8d8;
+.gallery-lede {
+  margin: 0.75rem auto 0;
+  max-width: 32rem;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--foam) 78%, transparent);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.gallery-item {
+  margin: 0;
+
+  &:first-child {
+    grid-column: 1 / -1;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  &:first-child &__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  &__caption {
+    margin-top: 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: color-mix(in srgb, var(--foam) 90%, transparent);
+  }
+}
+
+.gallery-proof {
+  margin-top: 2.75rem;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  background-color: var(--surface-night-elevated);
+  border: 1px solid color-mix(in srgb, var(--color-brand) 28%, transparent);
+
+  &__text {
+    margin: 0 auto;
+    max-width: 28rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--foam) 86%, transparent);
+  }
+
+  &__handle {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 700;
+    color: var(--color-brand);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.35rem;
+  }
+
+  &__secondary {
+    color: color-mix(in srgb, var(--foam) 88%, transparent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--foam);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery-proof__actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem 1.5rem;
+  }
 }

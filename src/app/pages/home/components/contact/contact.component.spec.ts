@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
+import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -21,6 +22,26 @@ describe('ContactComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should lead with WhatsApp and expose phone links', () => {
+    const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.contact-primary__cta'
+    );
+    const phoneLinks: HTMLAnchorElement[] = Array.from(
+      fixture.nativeElement.querySelectorAll('a.contact-phone')
+    );
+    const formPanel: HTMLDetailsElement = fixture.nativeElement.querySelector('.contact-form-panel');
+
+    expect(primary?.getAttribute('href')).toBe(CONTACT_CONFIG.whatsAppUrl);
+    expect(phoneLinks.length).toBe(2);
+    expect(phoneLinks[0].getAttribute('href')?.startsWith('tel:')).toBeTrue();
+    expect(formPanel.open).toBeFalse();
+  });
+
+  it('should keep optional form fields available with a min event date', () => {
+    const dateInput: HTMLInputElement = fixture.nativeElement.querySelector('#contact-fecha');
+    expect(dateInput.getAttribute('min')).toBe(component.minEventDate);
   });
 
   it('should have an invalid form when empty', () => {

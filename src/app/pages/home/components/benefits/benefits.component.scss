@@ -1,20 +1,106 @@
-@use '../../../../../styles.scss';
+.benefits-header {
+  margin-bottom: 2.75rem;
 
-.featured-text {
-  padding: 2rem;
+  &__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  &__lede {
+    margin: 0.75rem auto 0;
+    max-width: 30rem;
+    font-size: 1.1rem;
+    line-height: 1.45;
+    color: var(--ink-muted);
+  }
 }
 
-.project-text {
-  padding: 3rem;
-  font-size: 90%;
+.benefits-feature {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  &__body {
+    max-width: 34rem;
+  }
+}
+
+.benefits-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  &__icon {
+    margin-top: 0.12rem;
+    color: var(--color-brand-deep);
+    font-size: 1.15rem;
+  }
+}
+
+.benefits-extras {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.35rem;
+  background-color: var(--surface-day-elevated);
+  border: 1px solid color-mix(in srgb, var(--color-brand-deep) 16%, transparent);
+
+  &__summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      float: right;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--color-brand-deep);
+    }
+  }
+
+  &[open] &__summary::after {
+    content: '−';
+  }
+
+  &__list {
+    margin-top: 1.1rem;
+  }
+
+  &:focus-within {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+  }
 }
 
 @media (min-width: 992px) {
-  .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid styles.$color-primary;
-  }
-  .project-text {
-    padding: 5rem;
+  .benefits-feature {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 3rem;
   }
 }

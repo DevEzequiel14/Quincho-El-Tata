@@ -1,15 +1,20 @@
-@use '../../../../styles.scss';
-
-.social a {
-  text-align: center;
-  height: 3rem;
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 3rem;
-  background: styles.$color-bg-white;
-  border-radius: 100%;
-  line-height: 3rem;
-  color: styles.$color-primary;
-}
-.social a:hover {
-  background: styles.$color-hover;
-  color: styles.$color-bg-white;
+  height: 3rem;
+  background: var(--surface-day-elevated);
+  color: var(--color-brand-deep);
+  border-radius: 50%;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-brand);
+    color: var(--ink);
+  }
 }

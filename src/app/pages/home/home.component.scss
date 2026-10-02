@@ -1,11 +1,9 @@
-@use '../../../styles.scss';
-
 .masthead {
   position: relative;
   width: 100%;
   height: auto;
   min-height: 35rem;
-  padding: 15rem 0;
+  padding: 12rem 0 6rem;
   overflow: hidden;
 
   &__image {
@@ -20,7 +18,12 @@
   &__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
     z-index: 1;
   }
 
@@ -28,31 +31,67 @@
     position: relative;
     z-index: 2;
   }
-}
 
-.masthead h1 {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
+  &__content {
+    max-width: 40rem;
+  }
 
-.masthead h2 {
-  font-size: 1.5rem !important;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
+  &__title {
+    margin: 0 auto;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--foam);
+    text-wrap: balance;
+  }
 
-@media (min-width: 768px) {
-  .masthead {
-    h1 {
-      font-size: 4rem;
-      line-height: 4rem;
+  &__lede {
+    margin: 1rem auto 0;
+    max-width: 32rem;
+    font-family: var(--font-body);
+    font-size: clamp(1.125rem, 2.4vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--foam) 92%, transparent);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  &__cta.btn-brand {
+    min-width: min(100%, 17.5rem);
+    padding-inline: 1.5rem;
+  }
+
+  &__cta-secondary {
+    --bs-btn-color: var(--foam);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: color-mix(in srgb, var(--foam) 85%, transparent);
+    --bs-btn-hover-color: var(--foam);
+    --bs-btn-hover-bg: color-mix(in srgb, var(--foam) 12%, transparent);
+    --bs-btn-hover-border-color: var(--foam);
+    --bs-btn-active-color: var(--foam);
+    --bs-btn-active-bg: color-mix(in srgb, var(--foam) 16%, transparent);
+    --bs-btn-active-border-color: var(--foam);
+
+    color: var(--bs-btn-color);
+    background-color: var(--bs-btn-bg);
+    border: 1.5px solid var(--bs-btn-border-color);
+    min-width: min(100%, 11rem);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-btn-hover-color);
+      background-color: var(--bs-btn-hover-bg);
+      border-color: var(--bs-btn-hover-border-color);
     }
   }
 }
@@ -61,16 +100,6 @@
   .masthead {
     height: 100vh;
     padding: 0;
-
-    h1 {
-      font-size: 6.5rem;
-      line-height: 6.5rem;
-      letter-spacing: 0.8rem;
-    }
-    h2 {
-      max-width: 30rem;
-      font-size: 1.25rem;
-    }
   }
 }
 
@@ -86,7 +115,7 @@
   padding: 4rem 0;
 
   &__placeholder {
-    min-height: 24rem;
+    min-height: 12rem;
   }
 }
 

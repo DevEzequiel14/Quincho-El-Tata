@@ -37,9 +37,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
               "src/bootstrap-custom.scss",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -116,9 +116,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
               "src/bootstrap-custom.scss",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }

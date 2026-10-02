@@ -1,10 +1,10 @@
-@use '../../../styles.scss';
-
 .not-found {
   padding-top: 80px;
-  background-color: styles.$color-bg-black;
+  background-color: var(--surface-night);
+  color: var(--foam);
 }
 
 .not-found__message {
   max-width: 32rem;
+  color: color-mix(in srgb, var(--foam) 82%, transparent);
 }

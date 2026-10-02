@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { CONTACT_CONFIG } from '../../core/constants/contact.config';
 import { IMAGE_ASSETS } from '../../core/constants/image-assets.config';
 import { SeoService } from '../../core/services/seo.service';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
@@ -31,9 +32,11 @@ export class HomeComponent implements OnInit {
   private readonly seo = inject(SeoService);
 
   readonly heroImage = IMAGE_ASSETS.hero;
+  readonly whatsAppUrl = CONTACT_CONFIG.whatsAppUrl;
   title = 'Quincho El Tata';
-  subTitle = 'Un lugar para disfrutar';
-  btnText = 'Mas información';
+  subTitle = 'Quincho con pileta para hasta 60 personas en Palpalá. Consultá disponibilidad por WhatsApp.';
+  primaryCta = 'Consultar por WhatsApp';
+  secondaryCta = 'Ver precios';
 
   ngOnInit(): void {
     this.seo.applyHomeSeo();

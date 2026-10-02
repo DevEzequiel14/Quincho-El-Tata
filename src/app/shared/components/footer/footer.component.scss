@@ -1,3 +1,25 @@
 .footer {
-  padding: 3rem 0;
+  padding: 2.5rem 0;
+  color: color-mix(in srgb, var(--foam) 75%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-brand) 28%, transparent);
+}
+
+.footer__copy {
+  font-size: 0.95rem;
+}
+
+.footer__sep {
+  margin: 0 0.4rem;
+}
+
+.footer__link {
+  color: var(--color-brand);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--foam);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
 }
