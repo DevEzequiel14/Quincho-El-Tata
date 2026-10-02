@@ -66,16 +66,32 @@
     margin-top: 2rem;
   }
 
+  &__cta.btn-brand {
+    min-width: min(100%, 17.5rem);
+    padding-inline: 1.5rem;
+  }
+
   &__cta-secondary {
-    background-color: transparent;
-    border: 1.5px solid color-mix(in srgb, var(--foam) 85%, transparent);
-    color: var(--foam);
+    --bs-btn-color: var(--foam);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: color-mix(in srgb, var(--foam) 85%, transparent);
+    --bs-btn-hover-color: var(--foam);
+    --bs-btn-hover-bg: color-mix(in srgb, var(--foam) 12%, transparent);
+    --bs-btn-hover-border-color: var(--foam);
+    --bs-btn-active-color: var(--foam);
+    --bs-btn-active-bg: color-mix(in srgb, var(--foam) 16%, transparent);
+    --bs-btn-active-border-color: var(--foam);
+
+    color: var(--bs-btn-color);
+    background-color: var(--bs-btn-bg);
+    border: 1.5px solid var(--bs-btn-border-color);
+    min-width: min(100%, 11rem);
 
     &:hover,
     &:focus-visible {
-      background-color: color-mix(in srgb, var(--foam) 12%, transparent);
-      border-color: var(--foam);
-      color: var(--foam);
+      color: var(--bs-btn-hover-color);
+      background-color: var(--bs-btn-hover-bg);
+      border-color: var(--bs-btn-hover-border-color);
     }
   }
 }

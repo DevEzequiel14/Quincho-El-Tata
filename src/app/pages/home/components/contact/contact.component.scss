@@ -19,8 +19,9 @@
 }
 
 .contact-primary {
-  &__cta {
+  &__cta.btn-brand {
     min-width: min(100%, 20rem);
+    padding-inline: 1.5rem;
   }
 }
 
