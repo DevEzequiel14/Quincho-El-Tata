@@ -4,174 +4,125 @@
     <p class="contact-header__lede">{{ lede }}</p>
   </header>
 
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-md-4 mb-3 mb-md-0">
-      <div class="card py-4 h-100">
-        <div class="card-body text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-map-pins"
-            aria-hidden="true"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M10.828 9.828a4 4 0 1 0 -5.656 0l2.828 2.829l2.828 -2.829z" />
-            <path d="M8 7l0 .01" />
-            <path d="M18.828 17.828a4 4 0 1 0 -5.656 0l2.828 2.829l2.828 -2.829z" />
-            <path d="M16 15l0 .01" />
-          </svg>
-          <h3 class="h4 text-uppercase m-0 py-2">{{ directionTitle }}</h3>
-          <hr class="my-4 mx-auto" />
-          <div class="small">{{ direction }}</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3 mb-md-0">
-      <div class="card py-4 h-100">
-        <div class="card-body text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-phone"
-            aria-hidden="true"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
-            />
-          </svg>
-          <h3 class="h4 text-uppercase m-0 py-2">{{ phone }}</h3>
-          <hr class="my-4 mx-auto" />
-          @for (item of phones; track item.href) {
-            <div class="small">
-              <a class="contact-phone" [href]="item.href">{{ item.label }}</a>
+  <div class="contact-primary text-center">
+    <a
+      class="btn btn-brand btn-lg fw-semibold contact-primary__cta"
+      [href]="whatsAppUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ primaryCta }}
+    </a>
+
+    <ul class="contact-phones list-unstyled">
+      @for (item of phones; track item.href) {
+        <li>
+          <a class="contact-phone" [href]="item.href">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <details class="contact-form-panel">
+    <summary class="contact-form-panel__summary">{{ formSummary }}</summary>
+    <div class="contact-form-panel__body">
+      <p class="contact-form-panel__hint">{{ formHint }}</p>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="contact-nombre">Nombre</label>
+          <input
+            id="contact-nombre"
+            type="text"
+            class="form-control"
+            formControlName="nombre"
+            autocomplete="name"
+            [attr.aria-invalid]="isInvalid('nombre')"
+            [attr.aria-describedby]="isInvalid('nombre') ? 'contact-nombre-error' : null"
+          />
+          @if (getError('nombre'); as error) {
+            <div id="contact-nombre-error" class="form-text text-danger" role="alert">
+              {{ error }}
             </div>
           }
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row mt-5 justify-content-center">
-    <div class="col-lg-8">
-      <div class="card py-4 contact-form-card">
-        <div class="card-body px-4">
-          <h3 class="contact-form-card__title text-center">Enviar consulta</h3>
-          <p class="contact-form-card__hint text-center">
-            Completá el formulario y se abrirá WhatsApp con tu mensaje listo.
-          </p>
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-            <div class="mb-3">
-              <label class="form-label" for="contact-nombre">Nombre</label>
-              <input
-                id="contact-nombre"
-                type="text"
-                class="form-control"
-                formControlName="nombre"
-                autocomplete="name"
-                [attr.aria-invalid]="isInvalid('nombre')"
-                [attr.aria-describedby]="isInvalid('nombre') ? 'contact-nombre-error' : null"
-              />
-              @if (getError('nombre'); as error) {
-                <div id="contact-nombre-error" class="form-text text-danger" role="alert">
-                  {{ error }}
-                </div>
-              }
+        <div class="mb-3">
+          <label class="form-label" for="contact-telefono">Teléfono</label>
+          <input
+            id="contact-telefono"
+            type="tel"
+            class="form-control"
+            formControlName="telefono"
+            autocomplete="tel"
+            [attr.aria-invalid]="isInvalid('telefono')"
+            [attr.aria-describedby]="isInvalid('telefono') ? 'contact-telefono-error' : null"
+          />
+          @if (getError('telefono'); as error) {
+            <div id="contact-telefono-error" class="form-text text-danger" role="alert">
+              {{ error }}
             </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="contact-telefono">Teléfono</label>
-              <input
-                id="contact-telefono"
-                type="tel"
-                class="form-control"
-                formControlName="telefono"
-                autocomplete="tel"
-                [attr.aria-invalid]="isInvalid('telefono')"
-                [attr.aria-describedby]="isInvalid('telefono') ? 'contact-telefono-error' : null"
-              />
-              @if (getError('telefono'); as error) {
-                <div id="contact-telefono-error" class="form-text text-danger" role="alert">
-                  {{ error }}
-                </div>
-              }
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="contact-fecha">Fecha del evento (opcional)</label>
-              <input
-                id="contact-fecha"
-                type="date"
-                class="form-control"
-                formControlName="fecha"
-                [attr.min]="minEventDate"
-              />
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="contact-mensaje">Mensaje</label>
-              <textarea
-                id="contact-mensaje"
-                class="form-control"
-                rows="4"
-                formControlName="mensaje"
-                [attr.aria-invalid]="isInvalid('mensaje')"
-                [attr.aria-describedby]="isInvalid('mensaje') ? 'contact-mensaje-error' : null"
-              ></textarea>
-              @if (getError('mensaje'); as error) {
-                <div id="contact-mensaje-error" class="form-text text-danger" role="alert">
-                  {{ error }}
-                </div>
-              }
-            </div>
-
-            <div class="d-grid">
-              <button
-                type="submit"
-                class="btn btn-brand btn-lg fw-semibold"
-                [disabled]="submitStatus() === 'loading'"
-                [attr.aria-busy]="submitStatus() === 'loading'"
-              >
-                @if (submitStatus() === 'loading') {
-                  Enviando...
-                } @else {
-                  Enviar por WhatsApp
-                }
-              </button>
-            </div>
-
-            @if (submitStatus() === 'success') {
-              <p class="form-feedback form-feedback--success mt-3 mb-0" role="status">
-                Consulta preparada. Si no se abrió WhatsApp, revisá que el navegador permita
-                ventanas emergentes.
-              </p>
-            }
-            @if (submitStatus() === 'error') {
-              <p class="form-feedback form-feedback--error mt-3 mb-0" role="alert">
-                No se pudo abrir WhatsApp. Intentá de nuevo o contactanos por teléfono.
-              </p>
-            }
-          </form>
+          }
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="mt-5">
+        <div class="mb-3">
+          <label class="form-label" for="contact-fecha">Fecha del evento (opcional)</label>
+          <input
+            id="contact-fecha"
+            type="date"
+            class="form-control"
+            formControlName="fecha"
+            [attr.min]="minEventDate"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="contact-mensaje">Mensaje</label>
+          <textarea
+            id="contact-mensaje"
+            class="form-control"
+            rows="4"
+            formControlName="mensaje"
+            [attr.aria-invalid]="isInvalid('mensaje')"
+            [attr.aria-describedby]="isInvalid('mensaje') ? 'contact-mensaje-error' : null"
+          ></textarea>
+          @if (getError('mensaje'); as error) {
+            <div id="contact-mensaje-error" class="form-text text-danger" role="alert">
+              {{ error }}
+            </div>
+          }
+        </div>
+
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="btn btn-brand btn-lg fw-semibold"
+            [disabled]="submitStatus() === 'loading'"
+            [attr.aria-busy]="submitStatus() === 'loading'"
+          >
+            @if (submitStatus() === 'loading') {
+              Enviando...
+            } @else {
+              Enviar por WhatsApp
+            }
+          </button>
+        </div>
+
+        @if (submitStatus() === 'success') {
+          <p class="form-feedback form-feedback--success mt-3 mb-0" role="status">
+            Consulta preparada. Si no se abrió WhatsApp, revisá que el navegador permita ventanas
+            emergentes.
+          </p>
+        }
+        @if (submitStatus() === 'error') {
+          <p class="form-feedback form-feedback--error mt-3 mb-0" role="alert">
+            No se pudo abrir WhatsApp. Intentá de nuevo o contactanos por teléfono.
+          </p>
+        }
+      </form>
+    </div>
+  </details>
+
+  <div class="contact-social">
     <app-social></app-social>
   </div>
 </div>

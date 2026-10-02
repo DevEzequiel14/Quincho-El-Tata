@@ -19,14 +19,28 @@
     }
   </div>
 
-  <div class="gallery-cta text-center">
-    <a
-      class="btn btn-brand gallery-cta__btn btn-lg fw-semibold"
-      [href]="morePhotosUrl"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ morePhotosCta }}
-    </a>
-  </div>
+  <aside class="gallery-proof" aria-label="Más fotos del quincho">
+    <p class="gallery-proof__text">
+      En Instagram mostramos el lugar en uso:
+      <span class="gallery-proof__handle">{{ instagramHandle }}</span>
+    </p>
+    <div class="gallery-proof__actions">
+      <a
+        class="btn btn-brand gallery-proof__primary btn-lg fw-semibold"
+        [href]="instagramUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ instagramCta }}
+      </a>
+      <a
+        class="gallery-proof__secondary"
+        [href]="whatsAppUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ whatsAppCta }}
+      </a>
+    </div>
+  </aside>
 </div>

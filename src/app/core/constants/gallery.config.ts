@@ -22,4 +22,11 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     width: 1041,
     height: 586,
   },
+  {
+    src: '/icons/gallery/salon-interior.webp',
+    alt: 'Salón interior del quincho preparado para eventos',
+    caption: 'Salón',
+    width: 1387,
+    height: 785,
+  },
 ];

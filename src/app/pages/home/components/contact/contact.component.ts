@@ -21,10 +21,12 @@ export class ContactComponent {
   private readonly fb = inject(FormBuilder);
 
   title = 'Consultá disponibilidad';
-  lede = 'Escribinos por WhatsApp: te armamos el presupuesto según fecha e invitados.';
-  directionTitle = 'Dirección';
-  direction = 'C. Puerto Argentino 1789, Palpalá, Jujuy';
-  phone = 'Teléfonos';
+  lede = 'Escribinos por WhatsApp y te armamos el presupuesto según fecha e invitados.';
+  primaryCta = 'Consultar por WhatsApp';
+  formSummary = 'Armar mensaje para WhatsApp';
+  formHint = 'Completá los datos y se abrirá WhatsApp con tu consulta lista.';
+
+  readonly whatsAppUrl = CONTACT_CONFIG.whatsAppUrl;
   readonly phones: ContactPhone[] = CONTACT_CONFIG.phones.map((label) => ({
     label,
     href: `tel:${label.replace(/[^\d+]/g, '')}`,

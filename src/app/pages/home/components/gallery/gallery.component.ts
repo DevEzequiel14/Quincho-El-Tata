@@ -12,8 +12,13 @@ const MORE_PHOTOS_MESSAGE = 'Hola, me gustaría ver más fotos actuales del quin
 })
 export class GalleryComponent {
   title = 'El espacio';
-  description = 'Pileta y parrilla techada para tu festejo.';
+  description = 'Pileta, parrilla y salón. Más fotos del día a día están en Instagram.';
   images = GALLERY_IMAGES;
-  readonly morePhotosUrl = `https://wa.me/${CONTACT_CONFIG.phones[0].replace(/\D/g, '')}?text=${encodeURIComponent(MORE_PHOTOS_MESSAGE)}`;
-  morePhotosCta = 'Pedí más fotos por WhatsApp';
+
+  readonly instagramUrl = CONTACT_CONFIG.instagramUrl;
+  readonly instagramHandle = '@quinchoeltata_';
+  instagramCta = 'Ver más fotos en Instagram';
+
+  readonly whatsAppUrl = `https://wa.me/${CONTACT_CONFIG.phones[0].replace(/\D/g, '')}?text=${encodeURIComponent(MORE_PHOTOS_MESSAGE)}`;
+  whatsAppCta = 'Pedí fotos por WhatsApp';
 }

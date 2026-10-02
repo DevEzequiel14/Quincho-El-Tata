@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GalleryComponent } from './gallery.component';
+import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
 import { GALLERY_IMAGES } from '../../../../core/constants/gallery.config';
+import { GalleryComponent } from './gallery.component';
 
 describe('GalleryComponent', () => {
   let fixture: ComponentFixture<GalleryComponent>;
@@ -20,7 +21,7 @@ describe('GalleryComponent', () => {
   });
 
   it('should render gallery images with lazy loading', () => {
-    const images = fixture.nativeElement.querySelectorAll('img');
+    const images = fixture.nativeElement.querySelectorAll('.gallery-item__image');
     expect(images.length).toBe(GALLERY_IMAGES.length);
     images.forEach((img: HTMLImageElement) => {
       expect(img.getAttribute('loading')).toBe('lazy');
@@ -28,9 +29,17 @@ describe('GalleryComponent', () => {
     });
   });
 
-  it('should offer WhatsApp for more photos', () => {
-    const cta: HTMLAnchorElement | null = fixture.nativeElement.querySelector('.gallery-cta__btn');
-    expect(cta?.textContent?.trim()).toBe('Pedí más fotos por WhatsApp');
-    expect(cta?.href).toContain('wa.me');
+  it('should lead proof to Instagram and keep WhatsApp as secondary', () => {
+    const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.gallery-proof__primary'
+    );
+    const secondary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.gallery-proof__secondary'
+    );
+
+    expect(primary?.textContent?.trim()).toBe('Ver más fotos en Instagram');
+    expect(primary?.getAttribute('href')).toBe(CONTACT_CONFIG.instagramUrl);
+    expect(secondary?.textContent?.trim()).toBe('Pedí fotos por WhatsApp');
+    expect(secondary?.href).toContain('wa.me');
   });
 });

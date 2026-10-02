@@ -8,6 +8,7 @@ import { GoogleMapComponent } from '../../../../shared/components/google-map/goo
   styleUrl: './location.component.scss',
 })
 export class LocationComponent {
-  title = 'Palpalá, Jujuy';
-  description = `En nuestra querida ciudad, cerca de quienes más importan: familia, amigos y conocidos.`;
+  title = 'Ubicación';
+  description =
+    'C. Puerto Argentino 1789, Palpalá, Jujuy. Cerca de familia, amigos y conocidos — fácil de llegar para tu festejo.';
 }
