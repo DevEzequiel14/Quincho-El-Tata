@@ -36,11 +36,11 @@ describe('PricingComponent', () => {
     expect(notes.length).toBe(1);
     expect(notes[0].textContent?.trim()).toBe(PRICING_CONFIG.priceReferenceNote);
     expect(bullets.length).toBeGreaterThan(0);
-    expect(bullets[0].textContent?.trim()).toBe('•');
+    expect(bullets[0].classList.contains('bi-check-lg')).toBe(true);
   });
 
   it('should expose a WhatsApp CTA built from contact config', () => {
-    const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.btn-success');
+    const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.btn-brand');
     const expectedNumber = CONTACT_CONFIG.phones[0].replace(/\D/g, '');
 
     expect(link.textContent?.trim()).toBe(PRICING_CONFIG.cta.label);

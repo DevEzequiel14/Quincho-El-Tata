@@ -12,44 +12,54 @@
     />
     <div class="masthead__overlay" aria-hidden="true"></div>
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-      <div class="d-flex justify-content-center">
-        <div class="text-center">
-          <h1 class="mx-auto my-0 text-uppercase">{{ title }}</h1>
-          <h2 class="text-light mx-auto mt-2 mb-5">{{ subTitle }}</h2>
-          <a class="btn btn-success btn-lg fw-semibold" href="#about">{{ btnText }}</a>
+      <div class="masthead__content text-center">
+        <h1 class="masthead__title">{{ title }}</h1>
+        <p class="masthead__lede">{{ subTitle }}</p>
+        <div class="masthead__actions">
+          <a
+            class="btn btn-brand masthead__cta btn-lg fw-semibold"
+            [href]="whatsAppUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ primaryCta }}
+          </a>
+          <a class="btn masthead__cta-secondary btn-lg fw-semibold" href="#precios">
+            {{ secondaryCta }}
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="about-section bg-dark" id="about" appScrollAnimate>
+<section class="about-section surface-night" id="about" appScrollAnimate>
   <app-about></app-about>
 </section>
 
-<section class="projects-section bg-light" id="benefits" appScrollAnimate>
+<section class="projects-section surface-day" id="benefits" appScrollAnimate>
   <app-benefits></app-benefits>
 </section>
 
-<section class="gallery-section bg-dark text-white" id="galeria" appScrollAnimate>
+<section class="gallery-section surface-night" id="galeria" appScrollAnimate>
   @defer (on viewport) {
     <app-gallery />
   } @placeholder {
-    <div class="container py-5 text-center text-white-50 gallery-section__placeholder">
-      Cargando galería...
+    <div class="container py-5 text-center text-muted-on-night gallery-section__placeholder">
+      Cargando el espacio...
     </div>
   }
 </section>
 
-<section class="pricing-section bg-light" id="precios" appScrollAnimate>
+<section class="pricing-section surface-day" id="precios" appScrollAnimate>
   <app-pricing></app-pricing>
 </section>
 
-<section class="contact-section bg-dark" id="contact" appScrollAnimate>
+<section class="contact-section surface-night" id="contact" appScrollAnimate>
   <app-contact></app-contact>
 </section>
 
-<section class="text-center bg-dark location-section" id="location" appScrollAnimate>
+<section class="text-center surface-night location-section" id="location" appScrollAnimate>
   <app-location></app-location>
 </section>
 

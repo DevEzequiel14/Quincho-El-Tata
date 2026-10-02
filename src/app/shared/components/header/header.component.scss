@@ -10,8 +10,9 @@
   z-index: 1000;
 
   &.scrolled {
-    background-color: styles.$color-bg-white;
-    color: styles.$text-color-secondary;
+    background-color: var(--surface-day-elevated);
+    color: var(--ink);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-brand-deep) 12%, transparent);
   }
 
   .container {

@@ -4,9 +4,9 @@ export interface GalleryImage {
   caption: string;
   width: number;
   height: number;
-  placeholder?: boolean;
 }
 
+/** Espacios clave para la decisión de alquiler. Ampliar cuando haya fotos definitivas. */
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: '/icons/gallery/pileta-area.webp',
@@ -14,30 +14,12 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     caption: 'Pileta',
     width: 1600,
     height: 1201,
-    placeholder: true,
-  },
-  {
-    src: '/icons/gallery/espacio-verde.webp',
-    alt: 'Espacio verde del quincho ideal para eventos de día',
-    caption: 'Espacio verde',
-    width: 1041,
-    height: 586,
-    placeholder: true,
   },
   {
     src: '/icons/gallery/parrilla-techada.webp',
-    alt: 'Servicios de catering del quincho',
-    caption: 'Servicios de catering',
+    alt: 'Asadores y parrilla techada del quincho',
+    caption: 'Parrilla techada',
     width: 1041,
     height: 586,
-    placeholder: true,
-  },
-  {
-    src: '/icons/gallery/zona-exterior.webp',
-    alt: 'Servicios al aire libre del quincho',
-    caption: 'Servicios al aire libre',
-    width: 1028,
-    height: 578,
-    placeholder: true,
   },
 ];

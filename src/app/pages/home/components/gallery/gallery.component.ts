@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
 import { GALLERY_IMAGES } from '../../../../core/constants/gallery.config';
+
+const MORE_PHOTOS_MESSAGE = 'Hola, me gustaría ver más fotos actuales del quincho. ¡Gracias!';
 
 @Component({
   selector: 'app-gallery',
@@ -8,8 +11,9 @@ import { GALLERY_IMAGES } from '../../../../core/constants/gallery.config';
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
-  title = 'Galería';
-  description = 'Conocé los espacios del quincho: pileta, salón, parrilla y áreas verdes.';
+  title = 'El espacio';
+  description = 'Pileta y parrilla techada para tu festejo.';
   images = GALLERY_IMAGES;
-  readonly hasPlaceholders = GALLERY_IMAGES.some((image) => image.placeholder);
+  readonly morePhotosUrl = `https://wa.me/${CONTACT_CONFIG.phones[0].replace(/\D/g, '')}?text=${encodeURIComponent(MORE_PHOTOS_MESSAGE)}`;
+  morePhotosCta = 'Pedí más fotos por WhatsApp';
 }

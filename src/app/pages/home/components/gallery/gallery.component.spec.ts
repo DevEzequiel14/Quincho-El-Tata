@@ -27,4 +27,10 @@ describe('GalleryComponent', () => {
       expect(img.getAttribute('alt')).toBeTruthy();
     });
   });
+
+  it('should offer WhatsApp for more photos', () => {
+    const cta: HTMLAnchorElement | null = fixture.nativeElement.querySelector('.gallery-cta__btn');
+    expect(cta?.textContent?.trim()).toBe('Pedí más fotos por WhatsApp');
+    expect(cta?.href).toContain('wa.me');
+  });
 });

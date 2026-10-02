@@ -30,7 +30,7 @@ describe('HeaderMenuComponent', () => {
     const links = fixture.nativeElement.querySelectorAll('a[href^="#"]');
     expect(links.length).toBe(component.menu.length);
     expect(links[2].getAttribute('href')).toBe('#galeria');
-    expect(links[2].textContent?.trim()).toBe('Galería');
+    expect(links[2].textContent?.trim()).toBe('Espacio');
   });
 
   it('should navigate to home with the section fragment on click', () => {

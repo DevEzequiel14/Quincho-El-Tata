@@ -1,13 +1,17 @@
 # Galería — Quincho El Tata
 
-Fotos provisionales copiadas desde `public/icons/` hasta que haya material dedicado.
+Fotos de apoyo usadas en la sección **El espacio** (`GALLERY_IMAGES`).
 
-| Archivo | Descripción sugerida | Reemplazar con |
+En la web se muestran solo los espacios clave (hoy: pileta + parrilla). El resto puede quedar aquí hasta incorporar material definitivo.
+
+| Archivo | Uso actual | Reemplazar con |
 |---|---|---|
-| `pileta-area.webp` | Vista de la pileta y el área principal | Foto real de la pileta en uso |
-| `salon-interior.webp` | Salón interior equipado | Foto del salón montado para evento |
-| `espacio-verde.webp` | Espacio verde y área de día | Foto del jardín / espacio exterior |
-| `parrilla-techada.webp` | Parrilla y cocina techada | Foto de asadores y cocina |
-| `zona-exterior.webp` | Zona exterior y circulación | Foto nocturna o de fiesta |
+| `pileta-area.webp` | Sí — pileta | Foto real de la pileta en uso |
+| `parrilla-techada.webp` | Sí — parrilla | Foto de asadores y cocina |
+| `espacio-verde.webp` | Reserva | Foto del jardín / exterior |
+| `salon-interior.webp` | Reserva | Foto del salón montado |
+| `zona-exterior.webp` | Reserva | Foto nocturna o de fiesta |
 
 Formato recomendado: **WebP**, ancho máximo ~1600px, peso < 250 KB por imagen.
+
+Cuando haya fotos definitivas, agregalas a `src/app/core/constants/gallery.config.ts` (máx. 4 visibles) y borrá las provisionales.

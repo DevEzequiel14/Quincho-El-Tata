@@ -1,27 +1,79 @@
-.pricing-card {
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.pricing-header {
+  margin-bottom: 3rem;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12) !important;
+  &__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  &__subtitle {
+    margin: 0.85rem auto 0;
+    max-width: 34rem;
+    font-size: 1.15rem;
+    color: var(--ink-muted);
+  }
+
+  &__disclaimer {
+    margin: 0.75rem auto 0;
+    max-width: 36rem;
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+}
+
+.pricing-card {
+  height: 100%;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--surface-day-elevated);
+  border: 1px solid color-mix(in srgb, var(--color-brand-deep) 18%, transparent);
+
+  &__name {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  &__desc {
+    margin: 0 0 1rem;
+    color: var(--ink-muted);
   }
 
   &__price {
-    color: var(--bs-dark);
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
     line-height: 1.1;
+    color: var(--color-brand-deep);
+
+    &--spaced {
+      margin-bottom: 1.25rem;
+    }
   }
 
   &__price-note {
+    margin: 0 0 1.25rem;
+    font-size: 0.875rem;
     line-height: 1.4;
+    color: var(--ink-muted);
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   &__bullet {
-    color: #000;
-    font-weight: bold;
-    line-height: 1.5;
+    margin-top: 0.1rem;
+    color: var(--color-brand-deep);
+    font-weight: 700;
   }
 }

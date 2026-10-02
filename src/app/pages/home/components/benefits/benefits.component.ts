@@ -10,14 +10,12 @@ import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
 export class BenefitsComponent {
   mainTitle = 'Servicio principal';
   mainDescription =
-    'Quincho con pileta y espacio verde para poder disfrutar un lindo día junto a tus seres queridos.';
+    'Quincho con pileta y espacio verde para un día o una noche con los tuyos.';
   main = [
-    'Asadores techados, cocina con horno, heladera, freezer y vajilla de vidrio.',
-    'Pileta de 8x4m + pileta pequeña de 2x2m.',
-    'Mesas, sillas, bancas',
-    'Manteles',
-    'Baños completos',
-    'Wifi',
+    'Asadores techados, cocina equipada (horno, heladera, freezer) y vajilla.',
+    'Pileta 8×4 m + pileta chica 2×2 m.',
+    'Mesas, sillas, bancas y manteles.',
+    'Baños completos y WiFi.',
   ];
 
   additionalTitle = 'Servicios adicionales';

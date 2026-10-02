@@ -1,24 +1,29 @@
 <div class="container px-4 px-lg-5 py-5">
-  <h2 class="text-center fw-bold mb-3">{{ config.title }}</h2>
-  <p class="text-center lead mb-2">{{ config.subtitle }}</p>
-  <p class="text-center small text-muted mb-5" role="note">{{ config.disclaimer }}</p>
+  <header class="pricing-header text-center">
+    <h2 class="pricing-header__title">{{ config.title }}</h2>
+    <p class="pricing-header__subtitle">{{ config.subtitle }}</p>
+    <p class="pricing-header__disclaimer" role="note">{{ config.disclaimer }}</p>
+  </header>
 
   <div class="row g-4 justify-content-center mb-5">
     @for (plan of config.plans; track plan.name) {
       <div class="col-md-6 col-lg-5">
-        <article class="pricing-card h-100 p-4 rounded shadow-sm">
-          <h3 class="h4 fw-bold mb-2">{{ plan.name }}</h3>
-          <p class="text-muted mb-3">{{ plan.description }}</p>
-          <p class="pricing-card__price display-6 fw-bold" [class.mb-1]="plan.showPriceReferenceNote" [class.mb-4]="!plan.showPriceReferenceNote">
+        <article class="pricing-card h-100">
+          <h3 class="pricing-card__name">{{ plan.name }}</h3>
+          <p class="pricing-card__desc">{{ plan.description }}</p>
+          <p
+            class="pricing-card__price"
+            [class.pricing-card__price--spaced]="!plan.showPriceReferenceNote"
+          >
             {{ plan.priceLabel }}
           </p>
           @if (plan.showPriceReferenceNote) {
-            <p class="pricing-card__price-note small text-muted mb-4">{{ config.priceReferenceNote }}</p>
+            <p class="pricing-card__price-note">{{ config.priceReferenceNote }}</p>
           }
           <ul class="list-unstyled mb-0">
             @for (feature of plan.features; track feature) {
-              <li class="d-flex align-items-start mb-2">
-                <span class="pricing-card__bullet me-2" aria-hidden="true">•</span>
+              <li class="pricing-card__feature">
+                <i class="bi bi-check-lg pricing-card__bullet" aria-hidden="true"></i>
                 <span>{{ feature }}</span>
               </li>
             }
@@ -30,7 +35,7 @@
 
   <div class="text-center">
     <a
-      class="btn btn-success btn-lg fw-semibold"
+      class="btn btn-brand btn-lg fw-semibold"
       [href]="whatsAppUrl"
       target="_blank"
       rel="noopener noreferrer"

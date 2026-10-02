@@ -1,20 +1,86 @@
-@use '../../../../../styles.scss';
+.benefits-header {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  &__lede {
+    margin: 0.75rem auto 0;
+    max-width: 28rem;
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+  }
+}
 
 .featured-text {
-  padding: 2rem;
+  padding: 1.5rem 0 0;
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  &__lede {
+    margin: 0.5rem 0 0;
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+  }
+}
+
+.benefits-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.4;
+  }
+
+  &__icon {
+    margin-top: 0.1rem;
+    color: var(--color-brand-deep);
+    font-size: 1.1rem;
+  }
+}
+
+.project {
+  .benefits-list__icon {
+    color: var(--color-brand);
+  }
 }
 
 .project-text {
-  padding: 3rem;
-  font-size: 90%;
+  padding: 2rem 1.5rem;
+
+  &__title {
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+}
+
+.benefits-photo {
+  display: block;
 }
 
 @media (min-width: 992px) {
   .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid styles.$color-primary;
   }
+
   .project-text {
-    padding: 5rem;
+    padding: 3.5rem 2.5rem;
   }
 }

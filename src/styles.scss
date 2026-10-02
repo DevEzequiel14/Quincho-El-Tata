@@ -1,17 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/* Design tokens — Quincho El Tata: patio nocturno + olive de marca */
 
 $color-primary: #92a863;
-$color-hover: #157347;
-$color-bg-black: #000;
-$color-bg-white: #fff;
+$color-hover: #6f8548;
+$color-brand-deep: #3f5230;
+$color-bg-black: #12160f;
+$color-bg-white: #eef1e8;
+$color-night-elevated: #1c2318;
+$color-day-elevated: #f7f8f4;
+$color-ink: #1a2112;
+$color-ink-muted: #4a5340;
+$color-foam: #f4f6f0;
 
-$text-color-primary: #fff;
-$text-color-secondary: #000;
+$text-color-primary: #f4f6f0;
+$text-color-secondary: #1a2112;
+
+$font-display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+$font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+
+:root {
+  --font-display: #{$font-display};
+  --font-body: #{$font-body};
+
+  --color-brand: #{$color-primary};
+  --color-brand-hover: #{$color-hover};
+  --color-brand-deep: #{$color-brand-deep};
+
+  --surface-night: #{$color-bg-black};
+  --surface-night-elevated: #{$color-night-elevated};
+  --surface-day: #{$color-bg-white};
+  --surface-day-elevated: #{$color-day-elevated};
+
+  --ink: #{$color-ink};
+  --ink-muted: #{$color-ink-muted};
+  --foam: #{$color-foam};
+}
 
 body {
   display: block;
   margin: 0;
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--surface-night);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-brand) 55%, #000);
+  color: var(--foam);
 }
 
 .content-image {
@@ -20,14 +65,70 @@ body {
   height: auto;
 }
 
+.surface-night {
+  background-color: var(--surface-night);
+  color: var(--foam);
+}
+
+.surface-night-elevated {
+  background-color: var(--surface-night-elevated);
+  color: var(--foam);
+}
+
+.surface-day {
+  background-color: var(--surface-day);
+  color: var(--ink);
+}
+
+.surface-day-elevated {
+  background-color: var(--surface-day-elevated);
+  color: var(--ink);
+}
+
+.text-muted-on-day {
+  color: var(--ink-muted) !important;
+}
+
+.text-muted-on-night {
+  color: color-mix(in srgb, var(--foam) 72%, transparent) !important;
+}
+
+.btn-brand {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--ink);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-brand-hover);
+    border-color: var(--color-brand-hover);
+    color: var(--ink);
+  }
+
+  &:active {
+    background-color: var(--color-brand-deep);
+    border-color: var(--color-brand-deep);
+    color: var(--foam);
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: color-mix(in srgb, var(--color-brand) 45%, var(--surface-day));
+    border-color: transparent;
+    color: color-mix(in srgb, var(--ink) 55%, transparent);
+    opacity: 1;
+    cursor: not-allowed;
+  }
+}
+
 .skip-link {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
   z-index: 2000;
   padding: 0.5rem 1rem;
-  background-color: $color-bg-white;
-  color: $color-bg-black;
+  background-color: var(--surface-day-elevated);
+  color: var(--ink);
   font-weight: bold;
   text-decoration: none;
   border-radius: 0.25rem;
@@ -45,7 +146,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid $color-primary;
+  outline: 3px solid var(--color-brand);
   outline-offset: 2px;
 }
 

@@ -23,6 +23,17 @@ describe('ContactComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should expose clickable phone links and a min event date', () => {
+    const phoneLinks: HTMLAnchorElement[] = Array.from(
+      fixture.nativeElement.querySelectorAll('a.contact-phone')
+    );
+    const dateInput: HTMLInputElement = fixture.nativeElement.querySelector('#contact-fecha');
+
+    expect(phoneLinks.length).toBe(2);
+    expect(phoneLinks[0].getAttribute('href')?.startsWith('tel:')).toBeTrue();
+    expect(dateInput.getAttribute('min')).toBe(component.minEventDate);
+  });
+
   it('should have an invalid form when empty', () => {
     expect(component.contactForm.valid).toBeFalse();
     expect(component.contactForm.get('nombre')?.hasError('required')).toBeTrue();
