@@ -21,25 +21,33 @@
 
   <aside class="gallery-proof" aria-label="Más fotos del quincho">
     <p class="gallery-proof__text">
-      En Instagram mostramos el lugar en uso:
-      <span class="gallery-proof__handle">{{ instagramHandle }}</span>
-    </p>
-    <div class="gallery-proof__actions">
+      ¿Querés ver más del lugar en uso? Pedí fotos actuales por WhatsApp, o mirá
       <a
-        class="btn btn-brand gallery-proof__primary btn-lg fw-semibold"
+        class="gallery-proof__ig"
         [href]="instagramUrl"
         target="_blank"
         rel="noopener noreferrer"
       >
-        {{ instagramCta }}
+        {{ instagramHandle }}
       </a>
+      en Instagram.
+    </p>
+    <div class="gallery-proof__actions">
       <a
-        class="gallery-proof__secondary"
+        class="btn btn-brand gallery-proof__primary btn-lg fw-semibold"
         [href]="whatsAppUrl"
         target="_blank"
         rel="noopener noreferrer"
       >
         {{ whatsAppCta }}
+      </a>
+      <a
+        class="gallery-proof__secondary"
+        [href]="instagramUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ instagramCta }}
       </a>
     </div>
   </aside>

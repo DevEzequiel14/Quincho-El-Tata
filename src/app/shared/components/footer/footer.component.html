@@ -1,13 +1,25 @@
-<footer class="footer surface-night small text-center">
-  <span class="footer__copy">
+<footer class="footer surface-night">
+  <div class="footer__peak">
+    <p class="footer__reassurance">{{ reassurance }}</p>
+    <a
+      class="footer__wa"
+      [href]="whatsAppUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ whatsAppLabel }}
+    </a>
+  </div>
+
+  <p class="footer__copy">
     © {{ year }} Quincho El Tata
     <span class="footer__sep" aria-hidden="true">·</span>
     <a
       href="https://www.linkedin.com/in/chorolque-ezequiel/"
       target="_blank"
       rel="noopener noreferrer"
-      class="footer__link"
+      class="footer__credit"
       >Sitio por Ezequiel Chorolque</a
     >
-  </span>
+  </p>
 </footer>

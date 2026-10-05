@@ -27,10 +27,16 @@ export class ContactComponent {
   formHint = 'Completá los datos y se abrirá WhatsApp con tu consulta lista.';
 
   readonly whatsAppUrl = CONTACT_CONFIG.whatsAppUrl;
-  readonly phones: ContactPhone[] = CONTACT_CONFIG.phones.map((label) => ({
-    label,
-    href: `tel:${label.replace(/[^\d+]/g, '')}`,
-  }));
+  readonly primaryPhone: ContactPhone = {
+    label: CONTACT_CONFIG.phones[0],
+    href: `tel:${CONTACT_CONFIG.phones[0].replace(/[^\d+]/g, '')}`,
+  };
+  readonly secondaryPhone: ContactPhone | null = CONTACT_CONFIG.phones[1]
+    ? {
+        label: CONTACT_CONFIG.phones[1],
+        href: `tel:${CONTACT_CONFIG.phones[1].replace(/[^\d+]/g, '')}`,
+      }
+    : null;
   readonly minEventDate = new Date().toISOString().slice(0, 10);
 
   readonly submitStatus = signal<ContactSubmitStatus>('idle');

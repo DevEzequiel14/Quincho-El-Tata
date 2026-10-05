@@ -14,13 +14,17 @@
       {{ primaryCta }}
     </a>
 
-    <ul class="contact-phones list-unstyled">
-      @for (item of phones; track item.href) {
-        <li>
-          <a class="contact-phone" [href]="item.href">{{ item.label }}</a>
-        </li>
+    <p class="contact-phones">
+      <a class="contact-phone" [href]="primaryPhone.href">{{ primaryPhone.label }}</a>
+      @if (secondaryPhone) {
+        <span class="contact-phones__alt">
+          Otro contacto:
+          <a class="contact-phone contact-phone--quiet" [href]="secondaryPhone.href">{{
+            secondaryPhone.label
+          }}</a>
+        </span>
       }
-    </ul>
+    </p>
   </div>
 
   <details class="contact-form-panel">

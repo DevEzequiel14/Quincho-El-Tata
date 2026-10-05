@@ -4,18 +4,6 @@
       <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
         <h2 class="about__title mb-3">{{ title }}</h2>
         <p class="about__lede">{{ description }}</p>
-        <div class="about__details mb-4">
-          <h3 class="about__details-title">Detalles del espacio</h3>
-          <ul class="list-unstyled about__list">
-            @for (detail of details; track $index) {
-              <li class="d-flex align-items-center">
-                <i class="bi {{ detail.icon }} about__icon me-2" aria-hidden="true"></i>
-                <span [innerHTML]="detail.texto"></span>
-              </li>
-            }
-          </ul>
-          <p class="about__note">{{ note }}</p>
-        </div>
         <a
           [href]="urlWhatsApp"
           target="_blank"

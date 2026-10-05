@@ -19,4 +19,13 @@ describe('SocialComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should expose quiet text links for Instagram and Facebook', () => {
+    const links: HTMLAnchorElement[] = Array.from(
+      fixture.nativeElement.querySelectorAll('.social__link')
+    );
+
+    expect(links.map((link) => link.textContent?.trim())).toEqual(['Instagram', 'Facebook']);
+  });
 });
+

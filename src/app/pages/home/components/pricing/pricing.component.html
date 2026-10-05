@@ -2,36 +2,28 @@
   <header class="pricing-header text-center">
     <h2 class="pricing-header__title">{{ config.title }}</h2>
     <p class="pricing-header__subtitle">{{ config.subtitle }}</p>
-    <p class="pricing-header__disclaimer" role="note">{{ config.disclaimer }}</p>
   </header>
 
-  <div class="row g-4 justify-content-center mb-5">
+  <div class="pricing-anchor">
     @for (plan of config.plans; track plan.name) {
-      <div class="col-md-6 col-lg-5">
-        <article class="pricing-card h-100">
-          <h3 class="pricing-card__name">{{ plan.name }}</h3>
-          <p class="pricing-card__desc">{{ plan.description }}</p>
-          <p
-            class="pricing-card__price"
-            [class.pricing-card__price--spaced]="!plan.showPriceReferenceNote"
-          >
-            {{ plan.priceLabel }}
-          </p>
-          @if (plan.showPriceReferenceNote) {
-            <p class="pricing-card__price-note">{{ config.priceReferenceNote }}</p>
+      <article class="pricing-card">
+        <h3 class="pricing-card__name">{{ plan.name }}</h3>
+        <p class="pricing-card__desc">{{ plan.description }}</p>
+        <p class="pricing-card__price">{{ plan.priceLabel }}</p>
+        <p class="pricing-card__price-note">{{ config.priceReferenceNote }}</p>
+        <ul class="list-unstyled mb-0">
+          @for (feature of plan.features; track feature) {
+            <li class="pricing-card__feature">
+              <i class="bi bi-check-lg pricing-card__bullet" aria-hidden="true"></i>
+              <span>{{ feature }}</span>
+            </li>
           }
-          <ul class="list-unstyled mb-0">
-            @for (feature of plan.features; track feature) {
-              <li class="pricing-card__feature">
-                <i class="bi bi-check-lg pricing-card__bullet" aria-hidden="true"></i>
-                <span>{{ feature }}</span>
-              </li>
-            }
-          </ul>
-        </article>
-      </div>
+        </ul>
+      </article>
     }
   </div>
+
+  <p class="pricing-custom" role="note">{{ config.customNote }}</p>
 
   <div class="text-center">
     <a
