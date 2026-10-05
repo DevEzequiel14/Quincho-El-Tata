@@ -13,6 +13,7 @@ colors:
   ink-muted: "#4a5340"
   foam: "#f4f6f0"
   button-ink: "#14190f"
+  whatsapp-channel: "#25d366"
 typography:
   display:
     fontFamily: "Fraunces, Georgia, Times New Roman, serif"
@@ -100,13 +101,13 @@ components:
 
 El sistema visual es cálido y terrenal: un patio jujeño de noche y de día, no un brochure de resort. Olive de hojas como acento de marca, superficies que alternan noche profunda y día claro, tipografía con carácter (Fraunces) sobre cuerpo legible (Source Sans 3). La atmósfera sostiene hechos —pileta, capacidad, turnos, Palpalá— sin competir con ellos.
 
-La densidad es generosa en aire entre secciones y apretada dentro de grupos (hechos, listas, CTAs). La conversión vive en un único gesto sólido: WhatsApp en olive. Lo demás (ghost, links, redes) se mantiene quieto.
+La densidad es generosa en aire entre secciones y apretada dentro de grupos (hechos, listas, CTAs). La conversión vive en un gesto olive sólido en cada zona de decisión (hero, precios, contacto). Mid-funnel y redes se mantienen quietos (links). El float Meta-green es la excepción de canal, no una segunda voz de marca.
 
 Rechazos confirmados: brochure genérico de “experiencia única”, look dashboard SaaS, métricas en cards, y el cliché purple-gradient / AI landing.
 
 **Key Characteristics:**
-- Alternancia tonal noche/día como ritmo de página
-- Un acento olive sólido para conversión; secundarios ghost o texto
+- Alternancia tonal noche/día como ritmo de página (con puente día→día permitido en precios+ubicación)
+- Un acento olive sólido para conversión en zonas de decisión; secundarios ghost o texto
 - Display serif expresivo + sans de lectura cotidiana
 - Profundidad por capas tonales y borde fino; sombras excepcionales
 - Forma casi sin radio en superficies de contenido; foco olive visible
@@ -121,19 +122,24 @@ Paleta de patio: olive de hojas sobre tierra nocturna y papel de día.
 - **Olive profundo** (`brand-deep` / `#3f5230`): active del botón, bullets, énfasis sobre día.
 
 ### Neutral
-- **Noche de patio** (`surface-night` / `#12160f`): fondo base y secciones oscuras (hero continuum, galería, contacto).
+- **Noche de patio** (`surface-night` / `#12160f`): fondo base y secciones oscuras (hero continuum, about, galería, contacto, footer).
 - **Noche elevada** (`surface-night-elevated` / `#1c2318`): paneles sobre noche (prueba de galería).
-- **Día de patio** (`surface-day` / `#eef1e8`): secciones claras (servicios, precios).
+- **Día de patio** (`surface-day` / `#eef1e8`): secciones claras (qué incluye, precios, ubicación).
 - **Día elevada** (`surface-day-elevated` / `#f7f8f4`): cards, paneles de formulario/extras.
 - **Tinta** (`ink` / `#1a2112`): texto sobre día.
 - **Tinta suave** (`ink-muted` / `#4a5340`): ledes y notas sobre día.
 - **Espuma** (`foam` / `#f4f6f0`): texto sobre noche.
 - **Tinta de botón** (`button-ink` / `#14190f`): texto del CTA olive sólido.
 
-### Named Rules
-**The One Olive Rule.** El olive sólido es la voz de conversión (WhatsApp). No lo uses en acciones secundarias (Instagram, redes, “ver precios”) que compitan con esa conversión.
+### Channel (exception)
+- **WhatsApp canal** (`whatsapp-channel` / `#25d366`): solo el float pill post-scroll. Reconocimiento del canal Meta; no reemplaza al olive en CTAs de sección.
 
-**The Night/Day Alternation Rule.** Las secciones principales alternan `surface-night` y `surface-day`. No aplanes toda la landing a un solo fondo.
+### Named Rules
+**The One Olive Rule.** El olive sólido es la voz de conversión en la página (hero, precios, contacto). No lo uses en acciones secundarias (Instagram, redes, “ver precios”, mid-funnel about/galería) que compitan con esa conversión.
+
+**The Night/Day Alternation Rule.** Las secciones principales alternan `surface-night` y `surface-day`. Excepción intencional: **precios → ubicación** pueden quedar ambos en día para priorizar claridad logística antes del ask nocturno de contacto.
+
+**The Channel Float Exception.** El float WhatsApp puede usar Meta-green pill; es reconocimiento de canal, no un segundo `btn-brand`.
 
 ## Typography
 
@@ -157,9 +163,11 @@ Paleta de patio: olive de hojas sobre tierra nocturna y papel de día.
 
 Contenedor Bootstrap (`container` / `px-4 px-lg-5`). Ritmo vertical generoso entre secciones (`~4–8rem`) y grupos internos más compactos (`0.75–1.75rem`). Anclas con `scroll-margin-top: 80px` bajo el header.
 
+Orden de página: hero → about → qué incluye → galería → precios → ubicación → contacto (footer + float).
+
 Breakpoints observados: menú/móvil ~768px; hero a viewport completo y grillas de dos columnas ~992px. Flujo principalmente lineal (una columna en móvil); mid-funnel usa grid imagen + hechos en desktop.
 
-Hero full-bleed con imagen edge-to-edge y overlay oscuro; sin cards en el primer viewport.
+Hero full-bleed con imagen edge-to-edge y overlay oscuro; sin cards en el primer viewport. Nav: Qué incluye / Precios / Ubicación / Contacto.
 
 ## Elevation & Depth
 
@@ -184,11 +192,11 @@ Bordes: 1px (o 1.5px en ghost del hero) con olive mezclado, nunca `border-left` 
 Sólidos y confiados: un primario olive, el resto se calla.
 
 - **Shape:** sin radio (`0`) en CTAs de marca
-- **Primary (`btn-brand`):** fondo olive, texto tinta oscura, padding generoso (`~0.75rem 1.5rem`, min-width ~17.5–20rem en CTAs clave)
+- **Primary (`btn-brand`):** fondo olive, texto tinta oscura, padding generoso (`~0.75rem 1.5rem`, min-width ~17.5–20rem en CTAs clave). Zonas: hero, precios, contacto (y submit del form).
 - **Hover / Focus:** olive sombra; foco global `outline: 3px solid brand; outline-offset: 2px`
 - **Active:** olive profundo + texto espuma
 - **Ghost / secondary:** transparente, borde foam, solo sobre noche (hero “Ver precios”)
-- **Text link secundario:** underline, sin fondo (IG, redes, “Escribinos” del footer)
+- **Text link secundario:** underline, sin fondo (mid-funnel, IG, redes, “Escribinos” del footer, “Pedí fotos…”)
 
 ### Cards / Containers
 - **Corner Style:** cuadrado (`0`)
@@ -196,32 +204,39 @@ Sólidos y confiados: un primario olive, el resto se calla.
 - **Shadow Strategy:** ninguno en reposo (ver Elevation)
 - **Border:** 1px olive mezclado
 - **Internal Padding:** ~1.25–1.75rem
-- **Uso:** pricing ancla, paneles `details` (extras, formulario), prueba de galería — no como estructura del hero
+- **Uso:** pricing ancla (con nota de noche a consultar), paneles `details` (extras, formulario, más contacto), prueba de galería — no como estructura del hero
 
 ### Inputs / Fields
 - **Style:** controles Bootstrap sobre panel día elevated; labels Source Sans
 - **Focus:** outline olive del sistema
 - **Error:** texto peligro + `role="alert"`; mensajes en español local
-- **Disabled / loading:** botón submit con `aria-busy` y label “Enviando...”
+- **Disabled / loading:** botón submit con `aria-busy` y label “Abriendo WhatsApp...”
 
 ### Navigation
-Header corto (≤4 ítems clave), logo + menú. En móvil, panel full; foco y `inert` cuando cerrado. Sin eyebrows ni chips en nav.
+Header corto (≤4 ítems): Qué incluye, Precios, Ubicación, Contacto. En móvil, panel full; foco y `inert` cuando cerrado. Sin eyebrows ni chips en nav.
 
 ### Signature: WhatsApp CTA
-El patrón de marca es el botón olive sólido que abre WhatsApp (hero, about, precios, contacto, float Meta-green aparte). Instagram y redes nunca usan `btn-brand`.
+El patrón de marca es el botón olive sólido en **zonas de decisión** (hero, precios, contacto). About y galería no usan `btn-brand`. El float Meta-green aparece **después** de dejar el primer viewport. Instagram y redes nunca usan `btn-brand`; en contacto viven detrás de progressive disclosure (“Otro teléfono y redes”).
+
+### Motion
+Contenido visible por defecto. El fade-in de sección es enhancement (`.is-pending` solo con JS y `prefers-reduced-motion: no-preference`). Ease `cubic-bezier(0.22, 1, 0.36, 1)`.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** usar un solo CTA olive sólido por zona de decisión; el resto ghost o link.
-- **Do** alternar `surface-night` / `surface-day` entre secciones mayores.
+- **Do** usar un solo CTA olive sólido por zona de decisión; mid-funnel con links.
+- **Do** alternar `surface-night` / `surface-day`, salvo el puente precios→ubicación en día por claridad.
 - **Do** liderar con hechos (capacidad, turnos, qué incluye, Palpalá) antes que adjetivos.
+- **Do** marcar la galería como fotos de referencia hasta tener álbum definitivo.
+- **Do** co-ubicar “noche: consultar por WhatsApp” en la card de precios sin inventar un monto.
 - **Do** mantener Fraunces en display y Source Sans 3 en cuerpo/UI.
-- **Do** preservar foco visible olive y labels/`aria` del formulario.
+- **Do** preservar foco visible olive, labels/`aria` del formulario y `prefers-reduced-motion`.
 
 ### Don't:
 - **Don't** poner Instagram u otras redes como `btn-brand` compitiendo con WhatsApp.
-- **Don't** armar el mid-funnel como grilla de cards métricas o dual-pricing simétrico.
-- **Don't** inventar testimonios, ocupación o fotos definitivas que el negocio no aporte.
+- **Don't** repetir `btn-brand` en about/galería cuando el hero ya ofreció la conversión.
+- **Don't** armar el mid-funnel como grilla de cards métricas o dual-pricing simétrico inventado.
+- **Don't** inventar testimonios, ocupación, fotos definitivas o precio de noche no confirmado.
 - **Don't** caer en brochure de resort ni en look purple-gradient / dashboard SaaS.
 - **Don't** usar eyebrows, pills decorativas o sombras de moda como lenguaje por defecto.
+- **Don't** esconder secciones con `opacity: 0` como estado por defecto.

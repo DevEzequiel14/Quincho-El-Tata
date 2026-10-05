@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-05T15:24:00.000Z",
+  "generatedAt": "2026-10-05T19:41:27.000Z",
   "title": "Design System: Quincho El Tata",
   "extensions": {
     "colorMeta": {
@@ -168,6 +168,21 @@
           "#b0b8a4",
           "#e8ebe3"
         ]
+      },
+      "whatsapp-channel": {
+        "role": "secondary",
+        "displayName": "WhatsApp canal",
+        "canonical": "#25d366",
+        "tonalRamp": [
+          "#0d3b1e",
+          "#145c2e",
+          "#1b7a3d",
+          "#25d366",
+          "#4dd87f",
+          "#7ae3a1",
+          "#a8edc3",
+          "#d6f7e4"
+        ]
       }
     },
     "typographyMeta": {
@@ -211,18 +226,29 @@
     "motion": [
       {
         "name": "section-fade",
-        "value": "opacity 0.6s ease-out, transform 0.6s ease-out",
-        "purpose": "Entrada de sección al scroll (translateY + opacity)."
+        "value": "opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Enhancement de sección al scroll; contenido visible por defecto."
       },
       {
         "name": "header-fade",
-        "value": "fadeInHeader 1s ease-in-out",
-        "purpose": "Presencia inicial del masthead/header."
+        "value": "fadeInHeader 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Presencia inicial del masthead cuando motion está permitido."
+      },
+      {
+        "name": "float-reveal",
+        "value": "opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1), transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Aparición del float WA tras salir del primer viewport."
       }
     ],
     "breakpoints": [
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "992px" }
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "992px"
+      }
     ]
   },
   "components": [
@@ -247,8 +273,8 @@
       "kind": "card",
       "refersTo": "card-surface",
       "description": "Ancla de precio orientativo sobre día elevated.",
-      "html": "<article class=\"ds-card\"><h3 class=\"ds-card__title\">Día completo</h3><p class=\"ds-card__price\">Desde $280.000</p><p class=\"ds-card__note\">Precio de referencia; puede variar según fecha, invitados y temporada.</p></article>",
-      "css": ".ds-card { background: #f7f8f4; color: #1a2112; border: 1px solid color-mix(in srgb, #3f5230 18%, transparent); border-radius: 0; padding: 1.75rem 1.5rem; max-width: 28rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-card__title { margin: 0 0 0.5rem; font-family: Fraunces, Georgia, serif; font-size: 1.4rem; font-weight: 700; } .ds-card__price { margin: 0 0 0.35rem; font-family: Fraunces, Georgia, serif; font-size: 2.25rem; font-weight: 700; color: #3f5230; } .ds-card__note { margin: 0; font-size: 0.875rem; color: #4a5340; }"
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card__title\">Día completo</h3><p class=\"ds-card__price\">Desde $280.000</p><p class=\"ds-card__note\">Precio de referencia; puede variar según fecha, invitados y temporada.</p><p class=\"ds-card__night\">Noche (20:00–05:00): consultar por WhatsApp.</p></article>",
+      "css": ".ds-card { background: #f7f8f4; color: #1a2112; border: 1px solid color-mix(in srgb, #3f5230 18%, transparent); border-radius: 0; padding: 1.75rem 1.5rem; max-width: 28rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-card__title { margin: 0 0 0.5rem; font-family: Fraunces, Georgia, serif; font-size: 1.4rem; font-weight: 700; } .ds-card__price { margin: 0 0 0.35rem; font-family: Fraunces, Georgia, serif; font-size: 2.25rem; font-weight: 700; color: #3f5230; } .ds-card__note { margin: 0 0 0.65rem; font-size: 0.875rem; color: #4a5340; } .ds-card__night { margin: 0; font-size: 0.95rem; font-weight: 700; color: #3f5230; }"
     },
     {
       "name": "Text Field",
@@ -263,7 +289,7 @@
       "kind": "nav",
       "refersTo": null,
       "description": "Nav corta de secciones clave sobre header.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a class=\"ds-nav__link\" href=\"#galeria\">Espacio</a><a class=\"ds-nav__link\" href=\"#precios\">Precios</a><a class=\"ds-nav__link\" href=\"#contact\">Contacto</a></nav>",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a class=\"ds-nav__link\" href=\"#benefits\">Qué incluye</a><a class=\"ds-nav__link\" href=\"#precios\">Precios</a><a class=\"ds-nav__link\" href=\"#location\">Ubicación</a><a class=\"ds-nav__link\" href=\"#contact\">Contacto</a></nav>",
       "css": ".ds-nav { display: flex; gap: 1.25rem; align-items: center; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-nav__link { color: #1a2112; font-weight: 600; text-decoration: none; } .ds-nav__link:hover, .ds-nav__link:focus-visible { color: #3f5230; outline: 3px solid #92a863; outline-offset: 2px; }"
     },
     {
@@ -281,14 +307,22 @@
       "description": "Cierre con reassurance de anfitrión y link a WhatsApp.",
       "html": "<footer class=\"ds-footer\"><p class=\"ds-footer__line\">Te respondemos por WhatsApp para cerrar fecha y presupuesto.</p><a class=\"ds-footer__wa\" href=\"#\">Escribinos</a></footer>",
       "css": ".ds-footer { text-align: center; padding: 2.75rem 1.25rem; background: #12160f; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-footer__line { margin: 0 0 0.65rem; font-family: Fraunces, Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #f4f6f0; } .ds-footer__wa { color: #92a863; font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; } .ds-footer__wa:hover, .ds-footer__wa:focus-visible { color: #f4f6f0; }"
+    },
+    {
+      "name": "WhatsApp Float",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Float Meta-green post-scroll; excepción de canal, no btn-brand.",
+      "html": "<a class=\"ds-float-wa\" href=\"#\" aria-label=\"WhatsApp\">WA</a>",
+      "css": ".ds-float-wa { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50px; background: #25d366; color: #fff; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-weight: 700; text-decoration: none; } .ds-float-wa:hover, .ds-float-wa:focus-visible { outline: 3px solid #92a863; outline-offset: 2px; }"
     }
   ],
   "narrative": {
     "northStar": "El Patio Bajo las Higueras",
-    "overview": "El sistema visual es cálido y terrenal: un patio jujeño de noche y de día, no un brochure de resort. Olive de hojas como acento de marca, superficies que alternan noche profunda y día claro, tipografía con carácter (Fraunces) sobre cuerpo legible (Source Sans 3). La atmósfera sostiene hechos —pileta, capacidad, turnos, Palpalá— sin competir con ellos.\n\nLa densidad es generosa en aire entre secciones y apretada dentro de grupos (hechos, listas, CTAs). La conversión vive en un único gesto sólido: WhatsApp en olive. Lo demás (ghost, links, redes) se mantiene quieto.\n\nRechazos confirmados: brochure genérico de “experiencia única”, look dashboard SaaS, métricas en cards, y el cliché purple-gradient / AI landing.",
+    "overview": "El sistema visual es cálido y terrenal: un patio jujeño de noche y de día, no un brochure de resort. Olive de hojas como acento de marca, superficies que alternan noche profunda y día claro, tipografía con carácter (Fraunces) sobre cuerpo legible (Source Sans 3). La atmósfera sostiene hechos —pileta, capacidad, turnos, Palpalá— sin competir con ellos.\n\nLa densidad es generosa en aire entre secciones y apretada dentro de grupos (hechos, listas, CTAs). La conversión vive en un gesto olive sólido en cada zona de decisión (hero, precios, contacto). Mid-funnel y redes se mantienen quietos (links). El float Meta-green es la excepción de canal, no una segunda voz de marca.\n\nRechazos confirmados: brochure genérico de “experiencia única”, look dashboard SaaS, métricas en cards, y el cliché purple-gradient / AI landing.",
     "keyCharacteristics": [
-      "Alternancia tonal noche/día como ritmo de página",
-      "Un acento olive sólido para conversión; secundarios ghost o texto",
+      "Alternancia tonal noche/día como ritmo de página (con puente día→día permitido en precios+ubicación)",
+      "Un acento olive sólido para conversión en zonas de decisión; secundarios ghost o texto",
       "Display serif expresivo + sans de lectura cotidiana",
       "Profundidad por capas tonales y borde fino; sombras excepcionales",
       "Forma casi sin radio en superficies de contenido; foco olive visible"
@@ -296,12 +330,17 @@
     "rules": [
       {
         "name": "The One Olive Rule",
-        "body": "El olive sólido es la voz de conversión (WhatsApp). No lo uses en acciones secundarias (Instagram, redes, “ver precios”) que compitan con esa conversión.",
+        "body": "El olive sólido es la voz de conversión en la página (hero, precios, contacto). No lo uses en acciones secundarias (Instagram, redes, “ver precios”, mid-funnel about/galería) que compitan con esa conversión.",
         "section": "colors"
       },
       {
         "name": "The Night/Day Alternation Rule",
-        "body": "Las secciones principales alternan surface-night y surface-day. No aplanes toda la landing a un solo fondo.",
+        "body": "Las secciones principales alternan surface-night y surface-day. Excepción intencional: precios → ubicación pueden quedar ambos en día para priorizar claridad logística antes del ask nocturno de contacto.",
+        "section": "colors"
+      },
+      {
+        "name": "The Channel Float Exception",
+        "body": "El float WhatsApp puede usar Meta-green pill; es reconocimiento de canal, no un segundo btn-brand.",
         "section": "colors"
       },
       {
@@ -316,18 +355,22 @@
       }
     ],
     "dos": [
-      "Do usar un solo CTA olive sólido por zona de decisión; el resto ghost o link.",
-      "Do alternar surface-night / surface-day entre secciones mayores.",
+      "Do usar un solo CTA olive sólido por zona de decisión; mid-funnel con links.",
+      "Do alternar surface-night / surface-day, salvo el puente precios→ubicación en día por claridad.",
       "Do liderar con hechos (capacidad, turnos, qué incluye, Palpalá) antes que adjetivos.",
+      "Do marcar la galería como fotos de referencia hasta tener álbum definitivo.",
+      "Do co-ubicar “noche: consultar por WhatsApp” en la card de precios sin inventar un monto.",
       "Do mantener Fraunces en display y Source Sans 3 en cuerpo/UI.",
-      "Do preservar foco visible olive y labels/aria del formulario."
+      "Do preservar foco visible olive, labels/aria del formulario y prefers-reduced-motion."
     ],
     "donts": [
       "Don't poner Instagram u otras redes como btn-brand compitiendo con WhatsApp.",
-      "Don't armar el mid-funnel como grilla de cards métricas o dual-pricing simétrico.",
-      "Don't inventar testimonios, ocupación o fotos definitivas que el negocio no aporte.",
+      "Don't repetir btn-brand en about/galería cuando el hero ya ofreció la conversión.",
+      "Don't armar el mid-funnel como grilla de cards métricas o dual-pricing simétrico inventado.",
+      "Don't inventar testimonios, ocupación, fotos definitivas o precio de noche no confirmado.",
       "Don't caer en brochure de resort ni en look purple-gradient / dashboard SaaS.",
-      "Don't usar eyebrows, pills decorativas o sombras de moda como lenguaje por defecto."
+      "Don't usar eyebrows, pills decorativas o sombras de moda como lenguaje por defecto.",
+      "Don't esconder secciones con opacity: 0 como estado por defecto."
     ]
   }
 }

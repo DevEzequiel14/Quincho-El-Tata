@@ -34,27 +34,29 @@ Lo que un vecino genérico no puede copiar tal cual:
 - La conversión real ocurre fuera del sitio, en WhatsApp.
 - Datos operativos confirmados en el producto: capacidad hasta 60 personas; eventos de día 11:00–20:00; eventos de noche 20:00–05:00; ubicación C. Puerto Argentino 1789, Palpalá, Jujuy.
 - Precios en la web son de referencia; el presupuesto final se confirma por WhatsApp según fecha, invitados, temporada y extras.
+- Precio ancla publicado para día completo; turno noche se confirma por WhatsApp (sin inventar un número en la web).
 
 ## Capabilities and Constraints
 
 **Capacidades confirmadas**
 
-- Landing one-page: presentación, servicios, galería, precios orientativos, contacto, ubicación.
-- Consulta por WhatsApp (botón flotante, CTAs y formulario que arma el mensaje).
+- Landing one-page: presentación, qué incluye, galería, precios orientativos, ubicación, contacto.
+- Consulta por WhatsApp (CTAs en zonas de decisión, botón flotante post-scroll, formulario opcional que arma el mensaje).
 - SEO local y datos de negocio (dirección, teléfonos, redes).
 
 **Restricciones**
 
 - No hay reserva automática ni checkout en el sitio.
 - No inventar testimonios, ocupación (“lleno todos los fines”) ni pruebas sociales no aportadas.
-- Galería actual marcada como provisional; no presentar placeholders como evidencia fotográfica definitiva.
-- Mantener la estructura de secciones existente en el rediseño en curso (hero → about → servicios → galería → precios → contacto → ubicación), salvo decisión explícita posterior.
+- Galería actual es de referencia / provisional; no presentarla como evidencia fotográfica definitiva hasta que el dueño aporte el álbum.
+- Estructura de secciones shippeada: hero → about → qué incluye → galería → precios → ubicación → contacto.
 - Stack existente: Angular (SSR/prerender), deploy en Netlify.
 
 **Abiertos / no decididos**
 
 - Tiempo de respuesta prometido por WhatsApp.
 - Reglas de seña, cancelación u otras políticas de reserva (no afirmar hasta confirmarlas).
+- Precio orientativo de turno noche (no publicar hasta confirmarlo con el negocio).
 
 ## Brand Commitments
 
@@ -66,9 +68,9 @@ Lo que un vecino genérico no puede copiar tal cual:
 ## Evidence on Hand
 
 - Copy y datos operativos en el código (`seo`, `pricing`, `contact`, about/benefits).
-- Imágenes de sitio y OG en `public/`; galería bajo `public/icons/gallery/` con ítems marcados `placeholder: true` — tratarlas como provisionales.
+- Imágenes de sitio y OG en `public/`; galería bajo `public/icons/gallery/` — tratarlas como provisionales / de referencia.
 - Demo en producción: https://quinchoeltata.netlify.app/
-- **Ausencias que no se deben fabricar:** testimonios reales, casos de clientes, métricas de ocupación, fotos definitivas de galería hasta que el dueño las aporte.
+- **Ausencias que no se deben fabricar:** testimonios reales, casos de clientes, métricas de ocupación, fotos definitivas de galería ni precio de noche hasta que el dueño las aporte.
 
 ## Product Principles
 
@@ -80,4 +82,4 @@ Lo que un vecino genérico no puede copiar tal cual:
 
 ## Accessibility & Inclusion
 
-Sin estándar formal fijado por el negocio. Preservar y no degradar el andamiaje ya presente (skip-link, foco visible, menú accesible, labels/`aria` del formulario). Apuntar a uso cómodo en móvil, que es el contexto habitual de consulta.
+Sin estándar formal fijado por el negocio. Preservar y no degradar el andamiaje ya presente (skip-link, foco visible, menú accesible, labels/`aria` del formulario, `prefers-reduced-motion`). Apuntar a uso cómodo en móvil, que es el contexto habitual de consulta.
