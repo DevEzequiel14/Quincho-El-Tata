@@ -47,7 +47,11 @@ test.describe('Quincho El Tata', () => {
     await page.goto('/');
 
     const whatsAppLink = page.getByRole('link', { name: 'WhatsApp - Enviar mensaje' });
-    await whatsAppLink.scrollIntoViewIfNeeded();
+    await expect(whatsAppLink).toHaveCount(0);
+
+    await page.evaluate(() => {
+      window.scrollTo(0, Math.ceil(window.innerHeight * 0.6));
+    });
 
     await expect(whatsAppLink).toBeVisible();
     await expect(whatsAppLink).toHaveAttribute('href', /wa\.me\/\+?5493885054451/);
