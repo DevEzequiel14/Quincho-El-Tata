@@ -36,7 +36,7 @@ export class HeaderMenuComponent implements OnChanges {
   @Output() menuClose = new EventEmitter<void>();
 
   menu: MenuItem[] = [
-    { text: 'Espacio', id: 'galeria' },
+    { text: 'Qué incluye', id: 'benefits' },
     { text: 'Precios', id: 'precios' },
     { text: 'Contacto', id: 'contact' },
     { text: 'Ubicación', id: 'location' },

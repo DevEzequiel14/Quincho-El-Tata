@@ -12,7 +12,9 @@ const MORE_PHOTOS_MESSAGE = 'Hola, me gustaría ver más fotos actuales del quin
 })
 export class GalleryComponent {
   title = 'El espacio';
-  description = 'Pileta, parrilla y salón. Pedí fotos actuales o mirá el día a día en Instagram.';
+  description = 'Pileta, parrilla y salón: una vista de referencia del lugar.';
+  provisionalNote =
+    'Fotos de referencia. Pedí el álbum actual por WhatsApp antes de decidir.';
   images = GALLERY_IMAGES;
 
   readonly instagramUrl = CONTACT_CONFIG.instagramUrl;

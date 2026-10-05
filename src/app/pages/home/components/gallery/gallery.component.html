@@ -1,6 +1,7 @@
 <div class="container px-4 px-lg-5 py-5">
   <h2 class="gallery-title text-center">{{ title }}</h2>
   <p class="gallery-lede text-center">{{ description }}</p>
+  <p class="gallery-note text-center" role="note">{{ provisionalNote }}</p>
 
   <div class="gallery-grid">
     @for (image of images; track image.src) {
@@ -21,7 +22,7 @@
 
   <aside class="gallery-proof" aria-label="Más fotos del quincho">
     <p class="gallery-proof__text">
-      ¿Querés ver más del lugar en uso? Pedí fotos actuales por WhatsApp, o mirá
+      Para ver el patio en uso, pedí el álbum actual por WhatsApp o mirá
       <a
         class="gallery-proof__ig"
         [href]="instagramUrl"
@@ -34,7 +35,7 @@
     </p>
     <div class="gallery-proof__actions">
       <a
-        class="btn btn-brand gallery-proof__primary btn-lg fw-semibold"
+        class="gallery-proof__primary"
         [href]="whatsAppUrl"
         target="_blank"
         rel="noopener noreferrer"

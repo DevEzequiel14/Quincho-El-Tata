@@ -16,6 +16,16 @@
   color: color-mix(in srgb, var(--foam) 78%, transparent);
 }
 
+.gallery-note {
+  margin: 0.65rem auto 0;
+  max-width: 34rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--color-brand) 72%, var(--foam));
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -87,7 +97,15 @@
   }
 
   &__primary {
-    min-width: min(100%, 17.5rem);
+    color: var(--color-brand);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--foam);
+    }
   }
 
   &__secondary {

@@ -30,13 +30,13 @@ describe('HeaderMenuComponent', () => {
     const links = fixture.nativeElement.querySelectorAll('a[href^="#"]');
     expect(links.length).toBe(4);
     expect(component.menu.map((item) => item.id)).toEqual([
-      'galeria',
+      'benefits',
       'precios',
       'contact',
       'location',
     ]);
-    expect(links[0].getAttribute('href')).toBe('#galeria');
-    expect(links[0].textContent?.trim()).toBe('Espacio');
+    expect(links[0].getAttribute('href')).toBe('#benefits');
+    expect(links[0].textContent?.trim()).toBe('Qué incluye');
   });
 
   it('should navigate to home with the section fragment on click', () => {

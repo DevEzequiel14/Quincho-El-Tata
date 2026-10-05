@@ -1,9 +1,12 @@
 <a
   [href]="whatsAppUrl"
   class="float-wa"
+  [class.float-wa--visible]="visible()"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="WhatsApp - Enviar mensaje"
+  [attr.tabindex]="visible() ? null : -1"
+  [attr.aria-hidden]="visible() ? null : true"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

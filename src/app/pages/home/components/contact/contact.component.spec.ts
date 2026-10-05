@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CONTACT_CONFIG } from '../../../../core/constants/contact.config';
 import { ContactComponent } from './contact.component';
@@ -100,7 +100,7 @@ describe('ContactComponent', () => {
     expect(openSpy).not.toHaveBeenCalled();
   });
 
-  it('should open WhatsApp with encoded message on valid submit', fakeAsync(() => {
+  it('should open WhatsApp with encoded message on valid submit', () => {
     component.contactForm.setValue({
       nombre: 'Juan Pérez',
       telefono: '3885054451',
@@ -109,9 +109,6 @@ describe('ContactComponent', () => {
     });
 
     component.onSubmit();
-    expect(component.submitStatus()).toBe('loading');
-
-    tick(500);
 
     expect(openSpy).toHaveBeenCalled();
     const [url, target] = openSpy.calls.mostRecent().args;
@@ -120,9 +117,9 @@ describe('ContactComponent', () => {
     expect(url).toContain(encodeURIComponent('2026-07-15'));
     expect(target).toBe('_blank');
     expect(component.submitStatus()).toBe('success');
-  }));
+  });
 
-  it('should set error status when WhatsApp window cannot open', fakeAsync(() => {
+  it('should set error status when WhatsApp window cannot open', () => {
     openSpy.and.returnValue(null);
 
     component.contactForm.setValue({
@@ -133,8 +130,7 @@ describe('ContactComponent', () => {
     });
 
     component.onSubmit();
-    tick(500);
 
     expect(component.submitStatus()).toBe('error');
-  }));
+  });
 });

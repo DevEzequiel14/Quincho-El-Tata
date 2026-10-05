@@ -10,5 +10,5 @@ import { GoogleMapComponent } from '../../../../shared/components/google-map/goo
 export class LocationComponent {
   title = 'Ubicación';
   description =
-    'C. Puerto Argentino 1789, Palpalá, Jujuy. Cerca de familia, amigos y conocidos — fácil de llegar para tu festejo.';
+    'C. Puerto Argentino 1789, Palpalá, Jujuy. Dirección clara para que lleguen tus invitados sin vueltas.';
 }

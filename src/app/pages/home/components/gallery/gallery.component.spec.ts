@@ -29,7 +29,12 @@ describe('GalleryComponent', () => {
     });
   });
 
-  it('should lead proof with WhatsApp solid and Instagram as secondary link', () => {
+  it('should mark the gallery as provisional reference photos', () => {
+    const note: HTMLElement | null = fixture.nativeElement.querySelector('.gallery-note');
+    expect(note?.textContent).toContain('Fotos de referencia');
+  });
+
+  it('should offer WhatsApp and Instagram as text links, not solid brand CTAs', () => {
     const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
       '.gallery-proof__primary'
     );
@@ -38,7 +43,7 @@ describe('GalleryComponent', () => {
     );
 
     expect(primary?.textContent?.trim()).toBe('Pedí fotos por WhatsApp');
-    expect(primary?.classList.contains('btn-brand')).toBeTrue();
+    expect(primary?.classList.contains('btn-brand')).toBeFalse();
     expect(primary?.href).toContain('wa.me');
     expect(secondary?.textContent?.trim()).toBe('Ver Instagram');
     expect(secondary?.getAttribute('href')).toBe(CONTACT_CONFIG.instagramUrl);

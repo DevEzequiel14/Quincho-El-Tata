@@ -58,11 +58,8 @@ export class ContactComponent {
 
     const message = this.buildInquiryMessage();
     const url = this.buildWhatsAppUrl(message);
-
-    window.setTimeout(() => {
-      const opened = window.open(url, '_blank', 'noopener,noreferrer');
-      this.submitStatus.set(opened ? 'success' : 'error');
-    }, 500);
+    const opened = window.open(url, '_blank', 'noopener,noreferrer');
+    this.submitStatus.set(opened ? 'success' : 'error');
   }
 
   isInvalid(controlName: 'nombre' | 'telefono' | 'mensaje'): boolean {
