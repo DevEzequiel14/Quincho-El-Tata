@@ -29,7 +29,7 @@ describe('GalleryComponent', () => {
     });
   });
 
-  it('should lead proof to Instagram and keep WhatsApp as secondary', () => {
+  it('should lead proof with WhatsApp solid and Instagram as secondary link', () => {
     const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
       '.gallery-proof__primary'
     );
@@ -37,9 +37,11 @@ describe('GalleryComponent', () => {
       '.gallery-proof__secondary'
     );
 
-    expect(primary?.textContent?.trim()).toBe('Ver más fotos en Instagram');
-    expect(primary?.getAttribute('href')).toBe(CONTACT_CONFIG.instagramUrl);
-    expect(secondary?.textContent?.trim()).toBe('Pedí fotos por WhatsApp');
-    expect(secondary?.href).toContain('wa.me');
+    expect(primary?.textContent?.trim()).toBe('Pedí fotos por WhatsApp');
+    expect(primary?.classList.contains('btn-brand')).toBeTrue();
+    expect(primary?.href).toContain('wa.me');
+    expect(secondary?.textContent?.trim()).toBe('Ver Instagram');
+    expect(secondary?.getAttribute('href')).toBe(CONTACT_CONFIG.instagramUrl);
+    expect(secondary?.classList.contains('btn-brand')).toBeFalse();
   });
 });

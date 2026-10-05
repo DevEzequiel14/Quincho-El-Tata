@@ -24,18 +24,23 @@ describe('ContactComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should lead with WhatsApp and expose phone links', () => {
+  it('should lead with WhatsApp and one primary phone', () => {
     const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
       '.contact-primary__cta'
     );
     const phoneLinks: HTMLAnchorElement[] = Array.from(
       fixture.nativeElement.querySelectorAll('a.contact-phone')
     );
+    const quietPhone: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.contact-phone--quiet'
+    );
     const formPanel: HTMLDetailsElement = fixture.nativeElement.querySelector('.contact-form-panel');
 
     expect(primary?.getAttribute('href')).toBe(CONTACT_CONFIG.whatsAppUrl);
     expect(phoneLinks.length).toBe(2);
+    expect(phoneLinks[0].textContent?.trim()).toBe(CONTACT_CONFIG.phones[0]);
     expect(phoneLinks[0].getAttribute('href')?.startsWith('tel:')).toBeTrue();
+    expect(quietPhone?.textContent?.trim()).toBe(CONTACT_CONFIG.phones[1]);
     expect(formPanel.open).toBeFalse();
   });
 

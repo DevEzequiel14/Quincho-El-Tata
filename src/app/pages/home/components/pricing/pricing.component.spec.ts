@@ -22,17 +22,19 @@ describe('PricingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render all pricing plans from config', () => {
+  it('should render a single pricing anchor and custom note', () => {
     const cards = fixture.nativeElement.querySelectorAll('.pricing-card');
+    const customNote: HTMLElement = fixture.nativeElement.querySelector('.pricing-custom');
+
+    expect(cards.length).toBe(1);
     expect(cards.length).toBe(PRICING_CONFIG.plans.length);
-    expect(cards.length).toBe(2);
+    expect(customNote.textContent?.trim()).toBe(PRICING_CONFIG.customNote);
   });
 
-  it('should show price reference note only on plans with a reference price', () => {
+  it('should show a single price reference note on the anchor plan', () => {
     const notes = fixture.nativeElement.querySelectorAll('.pricing-card__price-note');
     const bullets = fixture.nativeElement.querySelectorAll('.pricing-card__bullet');
 
-    expect(fixture.nativeElement.querySelector('.pricing-card__badge')).toBeNull();
     expect(notes.length).toBe(1);
     expect(notes[0].textContent?.trim()).toBe(PRICING_CONFIG.priceReferenceNote);
     expect(bullets.length).toBeGreaterThan(0);

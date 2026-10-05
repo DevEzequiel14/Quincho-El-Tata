@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T15:24:00.000Z",
+  "title": "Design System: Quincho El Tata",
+  "extensions": {
+    "colorMeta": {
+      "brand": {
+        "role": "primary",
+        "displayName": "Olive de hojas",
+        "canonical": "#92a863",
+        "tonalRamp": [
+          "#1f2914",
+          "#3f5230",
+          "#6f8548",
+          "#92a863",
+          "#a8bc7f",
+          "#c2d0a3",
+          "#dce5c8",
+          "#f0f4e6"
+        ]
+      },
+      "brand-hover": {
+        "role": "primary",
+        "displayName": "Olive sombra",
+        "canonical": "#6f8548",
+        "tonalRamp": [
+          "#1a2412",
+          "#2f3d1f",
+          "#4a5f30",
+          "#6f8548",
+          "#8aa365",
+          "#a8bc88",
+          "#c9d6b0",
+          "#e8efdc"
+        ]
+      },
+      "brand-deep": {
+        "role": "primary",
+        "displayName": "Olive profundo",
+        "canonical": "#3f5230",
+        "tonalRamp": [
+          "#141a10",
+          "#24301c",
+          "#3f5230",
+          "#566b42",
+          "#73885c",
+          "#97a880",
+          "#c0cbb0",
+          "#e4e9dc"
+        ]
+      },
+      "surface-night": {
+        "role": "neutral",
+        "displayName": "Noche de patio",
+        "canonical": "#12160f",
+        "tonalRamp": [
+          "#0a0c08",
+          "#12160f",
+          "#1c2318",
+          "#2a3324",
+          "#3d4636",
+          "#5a6352",
+          "#8a9280",
+          "#c8cdc0"
+        ]
+      },
+      "surface-night-elevated": {
+        "role": "neutral",
+        "displayName": "Noche elevada",
+        "canonical": "#1c2318",
+        "tonalRamp": [
+          "#0e120c",
+          "#1c2318",
+          "#283022",
+          "#3a4433",
+          "#55604c",
+          "#7a846f",
+          "#a8b09c",
+          "#d6dacd"
+        ]
+      },
+      "surface-day": {
+        "role": "neutral",
+        "displayName": "Día de patio",
+        "canonical": "#eef1e8",
+        "tonalRamp": [
+          "#2a3220",
+          "#4a5340",
+          "#7a8470",
+          "#a8b09c",
+          "#cfd6c4",
+          "#eef1e8",
+          "#f7f8f4",
+          "#fcfdfb"
+        ]
+      },
+      "surface-day-elevated": {
+        "role": "neutral",
+        "displayName": "Día elevada",
+        "canonical": "#f7f8f4",
+        "tonalRamp": [
+          "#2a3220",
+          "#4a5340",
+          "#7a8470",
+          "#a8b09c",
+          "#d5dbc9",
+          "#eef1e8",
+          "#f7f8f4",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#1a2112",
+        "tonalRamp": [
+          "#0d1109",
+          "#1a2112",
+          "#2c3522",
+          "#4a5340",
+          "#6f7864",
+          "#9aa38e",
+          "#c7cdc0",
+          "#e8ebe3"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "#4a5340",
+        "tonalRamp": [
+          "#1a2112",
+          "#2c3522",
+          "#4a5340",
+          "#636c58",
+          "#848d78",
+          "#a8b09c",
+          "#d0d6c6",
+          "#eef1e8"
+        ]
+      },
+      "foam": {
+        "role": "neutral",
+        "displayName": "Espuma",
+        "canonical": "#f4f6f0",
+        "tonalRamp": [
+          "#2a3220",
+          "#4a5340",
+          "#7a8470",
+          "#a8b09c",
+          "#cfd6c4",
+          "#e4e8dc",
+          "#f4f6f0",
+          "#ffffff"
+        ]
+      },
+      "button-ink": {
+        "role": "neutral",
+        "displayName": "Tinta de botón",
+        "canonical": "#14190f",
+        "tonalRamp": [
+          "#0a0c08",
+          "#14190f",
+          "#1a2112",
+          "#2c3522",
+          "#4a5340",
+          "#7a8470",
+          "#b0b8a4",
+          "#e8ebe3"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display / Headline",
+        "purpose": "Títulos de sección en Fraunces."
+      },
+      "display-hero": {
+        "displayName": "Display hero",
+        "purpose": "Marca y título del masthead; tope 6rem."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombres de plan y subtítulos de panel."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lectura general y UI."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Frase de apoyo bajo títulos."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas y summaries."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-hairline",
+        "value": "0 1px 0 color-mix(in srgb, var(--color-brand-deep) 12%, transparent)",
+        "purpose": "Separación mínima del header; no usar en cards."
+      },
+      {
+        "name": "mobile-menu",
+        "value": "0 2px 8px rgba(0, 0, 0, 0.1)",
+        "purpose": "Utilidad del menú móvil únicamente."
+      }
+    ],
+    "motion": [
+      {
+        "name": "section-fade",
+        "value": "opacity 0.6s ease-out, transform 0.6s ease-out",
+        "purpose": "Entrada de sección al scroll (translateY + opacity)."
+      },
+      {
+        "name": "header-fade",
+        "value": "fadeInHeader 1s ease-in-out",
+        "purpose": "Presencia inicial del masthead/header."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "992px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA olive sólido para WhatsApp y acciones de conversión.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Consultar por WhatsApp</button>",
+      "css": ".ds-btn-primary { background: var(--color-brand, #92a863); color: #14190f; border: 1px solid var(--color-brand, #92a863); border-radius: 0; padding: 0.75rem 1.5rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.01em; cursor: pointer; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { background: var(--color-brand-hover, #6f8548); border-color: var(--color-brand-hover, #6f8548); outline: 3px solid var(--color-brand, #92a863); outline-offset: 2px; } .ds-btn-primary:active { background: var(--color-brand-deep, #3f5230); border-color: var(--color-brand-deep, #3f5230); color: #f4f6f0; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secundario sobre noche (p. ej. Ver precios en el hero).",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Ver precios</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #f4f6f0; border: 1.5px solid color-mix(in srgb, #f4f6f0 85%, transparent); border-radius: 0; padding: 0.75rem 1.5rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { background: color-mix(in srgb, #f4f6f0 12%, transparent); border-color: #f4f6f0; outline: 3px solid #92a863; outline-offset: 2px; }"
+    },
+    {
+      "name": "Pricing Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Ancla de precio orientativo sobre día elevated.",
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card__title\">Día completo</h3><p class=\"ds-card__price\">Desde $280.000</p><p class=\"ds-card__note\">Precio de referencia; puede variar según fecha, invitados y temporada.</p></article>",
+      "css": ".ds-card { background: #f7f8f4; color: #1a2112; border: 1px solid color-mix(in srgb, #3f5230 18%, transparent); border-radius: 0; padding: 1.75rem 1.5rem; max-width: 28rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-card__title { margin: 0 0 0.5rem; font-family: Fraunces, Georgia, serif; font-size: 1.4rem; font-weight: 700; } .ds-card__price { margin: 0 0 0.35rem; font-family: Fraunces, Georgia, serif; font-size: 2.25rem; font-weight: 700; color: #3f5230; } .ds-card__note { margin: 0; font-size: 0.875rem; color: #4a5340; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Campo de formulario sobre panel día (consulta WhatsApp).",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Nombre</span><input class=\"ds-field__input\" type=\"text\" placeholder=\"María García\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.35rem; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; color: #1a2112; } .ds-field__label { font-size: 0.95rem; font-weight: 600; } .ds-field__input { background: #f7f8f4; color: #1a2112; border: 1px solid color-mix(in srgb, #3f5230 22%, transparent); border-radius: 4px; padding: 0.5rem 0.75rem; font: inherit; } .ds-field__input:focus-visible { outline: 3px solid #92a863; outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Nav",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Nav corta de secciones clave sobre header.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a class=\"ds-nav__link\" href=\"#galeria\">Espacio</a><a class=\"ds-nav__link\" href=\"#precios\">Precios</a><a class=\"ds-nav__link\" href=\"#contact\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 1.25rem; align-items: center; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-nav__link { color: #1a2112; font-weight: 600; text-decoration: none; } .ds-nav__link:hover, .ds-nav__link:focus-visible { color: #3f5230; outline: 3px solid #92a863; outline-offset: 2px; }"
+    },
+    {
+      "name": "Quiet Social Links",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Redes como texto quieto; nunca btn-brand.",
+      "html": "<nav class=\"ds-social\" aria-label=\"Redes\"><span class=\"ds-social__label\">También en</span><a class=\"ds-social__link\" href=\"#\">Instagram</a><span aria-hidden=\"true\">·</span><a class=\"ds-social__link\" href=\"#\">Facebook</a></nav>",
+      "css": ".ds-social { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: baseline; justify-content: center; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-social__label { font-size: 0.9rem; color: color-mix(in srgb, #f4f6f0 58%, transparent); } .ds-social__link { color: color-mix(in srgb, #f4f6f0 78%, transparent); font-weight: 600; text-decoration: underline; text-underline-offset: 0.18em; } .ds-social__link:hover, .ds-social__link:focus-visible { color: #92a863; }"
+    },
+    {
+      "name": "Footer Peak-End",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Cierre con reassurance de anfitrión y link a WhatsApp.",
+      "html": "<footer class=\"ds-footer\"><p class=\"ds-footer__line\">Te respondemos por WhatsApp para cerrar fecha y presupuesto.</p><a class=\"ds-footer__wa\" href=\"#\">Escribinos</a></footer>",
+      "css": ".ds-footer { text-align: center; padding: 2.75rem 1.25rem; background: #12160f; font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif; } .ds-footer__line { margin: 0 0 0.65rem; font-family: Fraunces, Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #f4f6f0; } .ds-footer__wa { color: #92a863; font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; } .ds-footer__wa:hover, .ds-footer__wa:focus-visible { color: #f4f6f0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Patio Bajo las Higueras",
+    "overview": "El sistema visual es cálido y terrenal: un patio jujeño de noche y de día, no un brochure de resort. Olive de hojas como acento de marca, superficies que alternan noche profunda y día claro, tipografía con carácter (Fraunces) sobre cuerpo legible (Source Sans 3). La atmósfera sostiene hechos —pileta, capacidad, turnos, Palpalá— sin competir con ellos.\n\nLa densidad es generosa en aire entre secciones y apretada dentro de grupos (hechos, listas, CTAs). La conversión vive en un único gesto sólido: WhatsApp en olive. Lo demás (ghost, links, redes) se mantiene quieto.\n\nRechazos confirmados: brochure genérico de “experiencia única”, look dashboard SaaS, métricas en cards, y el cliché purple-gradient / AI landing.",
+    "keyCharacteristics": [
+      "Alternancia tonal noche/día como ritmo de página",
+      "Un acento olive sólido para conversión; secundarios ghost o texto",
+      "Display serif expresivo + sans de lectura cotidiana",
+      "Profundidad por capas tonales y borde fino; sombras excepcionales",
+      "Forma casi sin radio en superficies de contenido; foco olive visible"
+    ],
+    "rules": [
+      {
+        "name": "The One Olive Rule",
+        "body": "El olive sólido es la voz de conversión (WhatsApp). No lo uses en acciones secundarias (Instagram, redes, “ver precios”) que compitan con esa conversión.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night/Day Alternation Rule",
+        "body": "Las secciones principales alternan surface-night y surface-day. No aplanes toda la landing a un solo fondo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brand-First Display Rule",
+        "body": "En el primer viewport, el display lleva el nombre del lugar; ningún headline secundario lo debe opacar.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Cards y paneles son planos: fondo elevated + borde fino. No apilar sombras multi-capa ni halos sin offset.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar un solo CTA olive sólido por zona de decisión; el resto ghost o link.",
+      "Do alternar surface-night / surface-day entre secciones mayores.",
+      "Do liderar con hechos (capacidad, turnos, qué incluye, Palpalá) antes que adjetivos.",
+      "Do mantener Fraunces en display y Source Sans 3 en cuerpo/UI.",
+      "Do preservar foco visible olive y labels/aria del formulario."
+    ],
+    "donts": [
+      "Don't poner Instagram u otras redes como btn-brand compitiendo con WhatsApp.",
+      "Don't armar el mid-funnel como grilla de cards métricas o dual-pricing simétrico.",
+      "Don't inventar testimonios, ocupación o fotos definitivas que el negocio no aporte.",
+      "Don't caer en brochure de resort ni en look purple-gradient / dashboard SaaS.",
+      "Don't usar eyebrows, pills decorativas o sombras de moda como lenguaje por defecto."
+    ]
+  }
+}

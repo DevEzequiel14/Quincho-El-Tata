@@ -9,7 +9,13 @@ import { IMAGE_ASSETS } from '../../../../core/constants/image-assets.config';
 })
 export class BenefitsComponent {
   title = 'Qué incluye';
-  lede = 'Lo esencial del alquiler. Los extras se arman según tu evento.';
+  lede = 'Capacidad, turnos y lo esencial del alquiler. Los extras se arman según tu evento.';
+
+  facts = [
+    { icon: 'bi-people-fill', label: 'Hasta 60 personas' },
+    { icon: 'bi-brightness-high-fill', label: 'Día: 11:00–20:00' },
+    { icon: 'bi-moon-fill', label: 'Noche: 20:00–05:00' },
+  ];
 
   essentials = [
     'Asadores techados, cocina equipada y vajilla.',

@@ -66,11 +66,16 @@
     color: color-mix(in srgb, var(--foam) 86%, transparent);
   }
 
-  &__handle {
-    display: inline-block;
-    margin-top: 0.25rem;
+  &__ig {
     font-weight: 700;
     color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--foam);
+    }
   }
 
   &__actions {
@@ -79,6 +84,10 @@
     align-items: center;
     gap: 0.85rem;
     margin-top: 1.35rem;
+  }
+
+  &__primary {
+    min-width: min(100%, 17.5rem);
   }
 
   &__secondary {

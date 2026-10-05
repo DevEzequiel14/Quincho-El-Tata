@@ -11,38 +11,10 @@
 
   &__lede {
     max-width: 36rem;
+    margin-bottom: 1.75rem;
     font-size: 1.15rem;
     line-height: 1.5;
     color: color-mix(in srgb, var(--foam) 88%, transparent);
-  }
-
-  &__details-title {
-    margin-bottom: 0.85rem;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-brand);
-  }
-
-  &__list {
-    display: grid;
-    gap: 0.55rem;
-    font-size: 1.05rem;
-  }
-
-  &__icon {
-    color: var(--color-brand);
-    font-size: 1.15rem;
-  }
-
-  &__note {
-    margin-top: 1rem;
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: color-mix(in srgb, var(--foam) 65%, transparent);
   }
 
   &__image {

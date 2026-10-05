@@ -4,6 +4,15 @@
     <p class="benefits-header__lede">{{ lede }}</p>
   </header>
 
+  <ul class="benefits-facts list-unstyled" aria-label="Datos del alquiler">
+    @for (fact of facts; track fact.label) {
+      <li class="benefits-facts__item">
+        <i class="bi {{ fact.icon }} benefits-facts__icon" aria-hidden="true"></i>
+        <span>{{ fact.label }}</span>
+      </li>
+    }
+  </ul>
+
   <div class="benefits-feature">
     <img
       class="benefits-feature__image content-image"
