@@ -11,12 +11,13 @@ export const PRICING_CONFIG = {
   title: 'Precios orientativos',
   subtitle: 'Referencia para planificar. El presupuesto final se confirma por WhatsApp.',
   priceReferenceNote: 'Precio de referencia; puede variar según fecha, invitados y temporada.',
+  nightConsultNote: 'Noche (20:00–05:00): consultar por WhatsApp.',
   customNote:
     'Evento a medida (catering, barra móvil, parrillero u otros extras): consultanos y lo armamos según tu festejo.',
   plans: [
     {
       name: 'Día completo',
-      description: 'Alquiler del quincho para festejos familiares y eventos de día.',
+      description: 'Alquiler del quincho para festejos familiares y eventos de día (11:00–20:00).',
       priceLabel: 'Desde $280.000',
       features: [
         'Jornada extendida de uso',

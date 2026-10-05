@@ -24,24 +24,31 @@ describe('ContactComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should lead with WhatsApp and one primary phone', () => {
+  it('should lead with WhatsApp and one quiet primary phone', () => {
     const primary: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
       '.contact-primary__cta'
     );
-    const phoneLinks: HTMLAnchorElement[] = Array.from(
-      fixture.nativeElement.querySelectorAll('a.contact-phone')
-    );
-    const quietPhone: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
-      '.contact-phone--quiet'
+    const primaryPhone: HTMLAnchorElement | null = fixture.nativeElement.querySelector(
+      '.contact-phones .contact-phone'
     );
     const formPanel: HTMLDetailsElement = fixture.nativeElement.querySelector('.contact-form-panel');
+    const morePanel: HTMLDetailsElement = fixture.nativeElement.querySelector('.contact-more');
 
     expect(primary?.getAttribute('href')).toBe(CONTACT_CONFIG.whatsAppUrl);
-    expect(phoneLinks.length).toBe(2);
-    expect(phoneLinks[0].textContent?.trim()).toBe(CONTACT_CONFIG.phones[0]);
-    expect(phoneLinks[0].getAttribute('href')?.startsWith('tel:')).toBeTrue();
-    expect(quietPhone?.textContent?.trim()).toBe(CONTACT_CONFIG.phones[1]);
+    expect(primaryPhone?.textContent?.trim()).toBe(CONTACT_CONFIG.phones[0]);
+    expect(primaryPhone?.getAttribute('href')?.startsWith('tel:')).toBeTrue();
     expect(formPanel.open).toBeFalse();
+    expect(morePanel.open).toBeFalse();
+  });
+
+  it('should keep secondary phone and social behind progressive disclosure', () => {
+    const morePanel: HTMLDetailsElement = fixture.nativeElement.querySelector('.contact-more');
+    const secondary: HTMLAnchorElement | null = morePanel.querySelector('.contact-more__phone a');
+    const social = morePanel.querySelector('app-social');
+
+    expect(morePanel.open).toBeFalse();
+    expect(secondary?.textContent?.trim()).toBe(CONTACT_CONFIG.phones[1]);
+    expect(social).toBeTruthy();
   });
 
   it('should keep optional form fields available with a min event date', () => {

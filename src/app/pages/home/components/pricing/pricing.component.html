@@ -11,6 +11,7 @@
         <p class="pricing-card__desc">{{ plan.description }}</p>
         <p class="pricing-card__price">{{ plan.priceLabel }}</p>
         <p class="pricing-card__price-note">{{ config.priceReferenceNote }}</p>
+        <p class="pricing-card__night">{{ config.nightConsultNote }}</p>
         <ul class="list-unstyled mb-0">
           @for (feature of plan.features; track feature) {
             <li class="pricing-card__feature">

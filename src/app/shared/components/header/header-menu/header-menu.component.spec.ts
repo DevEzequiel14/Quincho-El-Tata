@@ -32,11 +32,13 @@ describe('HeaderMenuComponent', () => {
     expect(component.menu.map((item) => item.id)).toEqual([
       'benefits',
       'precios',
-      'contact',
       'location',
+      'contact',
     ]);
     expect(links[0].getAttribute('href')).toBe('#benefits');
     expect(links[0].textContent?.trim()).toBe('Qué incluye');
+    expect(links[2].getAttribute('href')).toBe('#location');
+    expect(links[3].getAttribute('href')).toBe('#contact');
   });
 
   it('should navigate to home with the section fragment on click', () => {

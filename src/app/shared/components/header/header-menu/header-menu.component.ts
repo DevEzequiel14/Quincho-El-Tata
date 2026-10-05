@@ -38,8 +38,8 @@ export class HeaderMenuComponent implements OnChanges {
   menu: MenuItem[] = [
     { text: 'Qué incluye', id: 'benefits' },
     { text: 'Precios', id: 'precios' },
-    { text: 'Contacto', id: 'contact' },
     { text: 'Ubicación', id: 'location' },
+    { text: 'Contacto', id: 'contact' },
   ];
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -105,8 +105,41 @@
   }
 }
 
+.contact-more {
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+  text-align: center;
+
+  &__summary {
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: color-mix(in srgb, var(--foam) 72%, transparent);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--foam);
+    }
+  }
+
+  &__body {
+    margin-top: 1rem;
+  }
+
+  &__phone {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--foam) 62%, transparent);
+  }
+}
+
 .contact-social {
-  margin-top: 2rem;
   text-align: center;
 }
 

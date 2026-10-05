@@ -25,6 +25,7 @@ export class ContactComponent {
   primaryCta = 'Consultar por WhatsApp';
   formSummary = 'Armar mensaje para WhatsApp';
   formHint = 'Completá los datos y se abrirá WhatsApp con tu consulta lista.';
+  moreSummary = 'Otro teléfono y redes';
 
   readonly whatsAppUrl = CONTACT_CONFIG.whatsAppUrl;
   readonly primaryPhone: ContactPhone = {

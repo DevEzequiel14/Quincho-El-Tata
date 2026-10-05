@@ -15,15 +15,9 @@
     </a>
 
     <p class="contact-phones">
-      <a class="contact-phone" [href]="primaryPhone.href">{{ primaryPhone.label }}</a>
-      @if (secondaryPhone) {
-        <span class="contact-phones__alt">
-          Otro contacto:
-          <a class="contact-phone contact-phone--quiet" [href]="secondaryPhone.href">{{
-            secondaryPhone.label
-          }}</a>
-        </span>
-      }
+      <a class="contact-phone contact-phone--quiet" [href]="primaryPhone.href">{{
+        primaryPhone.label
+      }}</a>
     </p>
   </div>
 
@@ -126,7 +120,20 @@
     </div>
   </details>
 
-  <div class="contact-social">
-    <app-social></app-social>
-  </div>
+  <details class="contact-more">
+    <summary class="contact-more__summary">{{ moreSummary }}</summary>
+    <div class="contact-more__body">
+      @if (secondaryPhone) {
+        <p class="contact-more__phone">
+          Otro contacto:
+          <a class="contact-phone contact-phone--quiet" [href]="secondaryPhone.href">{{
+            secondaryPhone.label
+          }}</a>
+        </p>
+      }
+      <div class="contact-social">
+        <app-social></app-social>
+      </div>
+    </div>
+  </details>
 </div>

@@ -41,6 +41,11 @@ describe('PricingComponent', () => {
     expect(bullets[0].classList.contains('bi-check-lg')).toBe(true);
   });
 
+  it('should co-locate night consult guidance on the pricing card', () => {
+    const night: HTMLElement = fixture.nativeElement.querySelector('.pricing-card__night');
+    expect(night.textContent?.trim()).toBe(PRICING_CONFIG.nightConsultNote);
+  });
+
   it('should expose a WhatsApp CTA built from contact config', () => {
     const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a.btn-brand');
     const expectedNumber = CONTACT_CONFIG.phones[0].replace(/\D/g, '');
